@@ -20,6 +20,7 @@ Container::make('post_meta', 'Module')
 // -> Funktion, um die Module und die entsprechenden Templates auf der Seite zu laden
 function render_modules (): void {
     $modules = carbon_get_the_post_meta('modules');
+    js_log('render_modules', $modules);
     if (empty($modules)) {
         return;
     }
