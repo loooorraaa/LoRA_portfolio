@@ -6,7 +6,7 @@
     /* colors */
     --color-white: #ffffff;
     --color-black: #000000;
-    --color-accent: #ff0000;
+    --color-accent: rgba(237, 221, 142, 1);
     /* gaps & sizes */
     --gap-around: 40px;
     /* fonts */
@@ -14,13 +14,49 @@
 }
 
 /* Styling of all available layout components. */
+
 [data-layout="header"] {
     padding: var(--gap-around);
     background-color: var(--color-accent);
     position: sticky;
     top: 0;
     z-index: 100;
+
+    .nav-container {
+        display: flex;
+        justify-content: flex-end;
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: black;
+                font-family: 'Source Code Pro', monospace;
+                font-size: 13px;
+                letter-spacing: 2px;
+            }
+        }
+    }
 }
+
+
+
+    
+   
+
+
+    
+
+
 [data-layout="footer"] {
     padding: var(--gap-around);
     background-color: var(--color-accent);
