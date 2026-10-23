@@ -1,6 +1,7 @@
 
 <?php
 $menus = get_menu_by_slug('main');
+$logo = get_globals_logo();
 ?>
 
 <!-- Google Font: Source Code Pro -->
@@ -10,6 +11,7 @@ $menus = get_menu_by_slug('main');
       rel="stylesheet">
 
 <header data-layout="header">
+    <img class="logo" src="<?= $logo['src'] ?>" alt="<?= $logo['alt'] ?>">
 
     <nav class="nav-container">
         <ul class="nav">

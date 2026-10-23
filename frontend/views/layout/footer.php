@@ -36,7 +36,7 @@ $legals = get_menu_by_slug('legals');
 
   
 
-<!-- Mitte: Instagram und LinkedIn -->
+<!-- Mitte: Instagram -->
 <div class="footer-instagram">
     <span>Instagram</span>
 
@@ -47,7 +47,7 @@ $legals = get_menu_by_slug('legals');
     >
         @lora.portfolio
     </a>
-    
+
 </div>
 
     <!-- Rechts: Hauptnavigation -->
