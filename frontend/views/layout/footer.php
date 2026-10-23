@@ -2,6 +2,8 @@
 <?php
 $menus = get_menu_by_slug('main');
 $legals = get_menu_by_slug('legals');
+
+$instagram = get_globals_instagram();
 ?>
 
 <!-- Google Font: Source Code Pro -->
