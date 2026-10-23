@@ -47,16 +47,7 @@ $legals = get_menu_by_slug('legals');
     >
         @lora.portfolio
     </a>
-
-    <span>LinkedIn</span>
-
-    <a
-        href="<?= esc_url(carbon_get_theme_option('linkedin_url')) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        LinkedIn-Profil
-    </a>
+    
 </div>
 
     <!-- Rechts: Hauptnavigation -->
