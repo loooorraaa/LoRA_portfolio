@@ -17,12 +17,14 @@
 
 
 
-/* HEADER */
+
+
+   /* HEADER*/
 
 [data-layout="header"] {
+    width: 100%;
     padding: 20px 5.3%;
     box-sizing: border-box;
-    width: 100%;
 
     background-color: var(--color-accent);
     position: sticky;
@@ -33,6 +35,8 @@
         display: flex;
         justify-content: flex-end;
         width: 100%;
+        padding: 0;
+        margin: 0;
         box-sizing: border-box;
 
         .nav {
@@ -58,27 +62,17 @@
 
 
 
-
-
-
-
-/*FOOTER */
+   /* FOOTER*/
 
 [data-layout="footer"] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 
-    padding: 72px 5.3%;
-    min-height: 253px;
-    box-sizing: border-box;
-
-   
     width: 100%;
+    min-height: 253px;
+    padding: 72px 5.3%;
     box-sizing: border-box;
-
-   
-
 
     background-color: var(--color-accent);
     font-family: 'Source Code Pro', monospace;
@@ -87,7 +81,9 @@
     color: #000;
 }
 
+
 /* Gemeinsame Listenformatierung */
+
 [data-layout="footer"] .footer-list {
     display: flex;
     flex-direction: column;
@@ -99,7 +95,9 @@
     padding: 0;
 }
 
+
 /* Links im Footer */
+
 [data-layout="footer"] a {
     color: #000;
     text-decoration: none;
@@ -111,33 +109,71 @@
     text-decoration: underline;
 }
 
-/* Linker Bereich */
+
+/* Linker Bereich: Rechtliches */
+
 [data-layout="footer"] .footer-legal {
     justify-self: start;
+    margin: 0;
+    padding: 0;
 }
 
-/* Mittlerer Bereich */
+
+/* Mittlerer Bereich: Instagram */
+
 [data-layout="footer"] .footer-instagram {
-    justify-self: center;
-}
-
-[data-layout="footer"] .footer-instagram a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-self: center;
+
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
-/* Rechter Bereich */
+[data-layout="footer"] .footer-instagram a {
+    color: #000;
+    text-decoration: none;
+}
+
+[data-layout="footer"] .footer-instagram a:hover {
+    text-decoration: underline;
+}
+
+
+/* Rechter Bereich: Hauptnavigation */
+
 [data-layout="footer"] .footer-main-nav {
     justify-self: end;
+    margin: 0;
+    padding: 0;
 }
+
+[data-layout="footer"] .footer-main-nav .footer-list {
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Copyright */
 
 [data-layout="footer"] .footer-copyright {
     margin-top: 0;
 }
 
-/* Mobile Darstellung */
+
+
+   /*MOBILE DARSTELLUNG*/
+
+
 @media (max-width: 600px) {
+
+    [data-layout="header"] {
+        padding: 20px 6%;
+    }
+
     [data-layout="footer"] {
         grid-template-columns: 1fr 1fr;
         gap: 32px 20px;
@@ -148,15 +184,13 @@
         grid-column: 1;
         grid-row: 2;
         justify-self: start;
-    }
-
-    [data-layout="footer"] .footer-instagram a {
         align-items: flex-start;
     }
 
     [data-layout="footer"] .footer-main-nav {
         grid-column: 2;
         grid-row: 1;
+        justify-self: end;
     }
 }
 

@@ -34,15 +34,20 @@ $legals = get_menu_by_slug('legals');
         </nav>
     </div>
 
-    <!-- Mitte: Instagram -->
-    <div class="footer-instagram">
-        <a href="https://www.instagram.com/lora.portfolio/"
-           target="_blank"
-           rel="noopener noreferrer">
-            <span>Instagram</span>
-            <span>@lora.portfolio</span>
-        </a>
-    </div>
+  
+<!-- Mitte: Instagram -->
+<div class="footer-instagram">
+    <span>Instagram</span>
+
+    <a
+        href="<?= esc_url(carbon_get_theme_option('instagram_url')) ?>"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        @lora.portfolio
+    </a>
+</div>
+
 
     <!-- Rechts: Hauptnavigation -->
     <nav class="footer-main-nav" aria-label="Footer-Navigation">
