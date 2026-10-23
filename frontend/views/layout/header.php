@@ -11,7 +11,6 @@ $logo = get_globals_logo();
       rel="stylesheet">
 
 <header data-layout="header">
-    <img class="logo" src="<?= $logo['src'] ?>" alt="<?= $logo['alt'] ?>">
 
     <nav class="nav-container">
         <ul class="nav">
