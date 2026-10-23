@@ -1,7 +1,9 @@
 
 <?php
 
-function get_project_by_id($id) {
+function get_project_by_id(int $id): array {
+    // Daten aus dem Backend holen
+
     $titel = get_the_title($id);
 
     $hero_image_id = carbon_get_post_meta($id, 'project_hero_image');
@@ -16,12 +18,29 @@ function get_project_by_id($id) {
     $project_image3_id = carbon_get_post_meta($id, 'project_image3');
     $project_image3 = get_media_by_id(id: $project_image3_id);
 
-    $project_gallery_ids = carbon_get_post_meta($id, 'project_gallery');
+    // Galerie: mehrere Medien-IDs zurückgeben
+    $project_gallery = carbon_get_post_meta($id, 'project_gallery');
 
     $project_description = carbon_get_post_meta($id, 'project_description');
     $project_link = carbon_get_post_meta($id, 'project_link');
 
-    js_log($titel);
+    // Daten zurückgeben
+    return [
+        'titel' => $titel,
+        'hero_image' => $hero_image,
+        'project_image1' => $project_image1,
+        'project_image2' => $project_image2,
+        'project_image3' => $project_image3,
+        'project_gallery' => $project_gallery,
+        'project_description' => $project_description,
+        'project_link' => $project_link,
+    ];
+}
+
+
+
+   
+    /*js_log($titel);
     js_log($hero_image);
     js_log($project_image1);
     js_log($project_image2);
@@ -37,4 +56,4 @@ function get_project_by_id($id) {
 
 
     //js_log("infos projekt zurückgeben mit id: " . $id);
-    // Implementation for fetching project data
+    // Implementation for fetching project data*/
