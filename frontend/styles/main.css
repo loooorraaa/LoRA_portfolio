@@ -182,7 +182,7 @@
 .project-page {
     width: 100%;
     box-sizing: border-box;
-    padding: 80px 18% 100px;
+    padding: 80px 8% 100px 18%;
 
     display: grid;
     grid-template-columns: 0.8fr 1fr;
