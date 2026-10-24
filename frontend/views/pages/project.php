@@ -26,11 +26,31 @@ js_log($projekt);
     <!-- Bilder -->
     <div class="project-visuals">
 
-        <img
-            class="hero-image"
-            src="<?= esc_url($projekt['hero_image']['src']) ?>"
-            alt="<?= esc_attr($projekt['hero_image']['alt']) ?>"
-        >
+        <!-- Hero-Bild: öffnet den Projektlink beim Klick -->
+        <?php if (!empty($projekt['project_link'])) : ?>
+
+            <a
+                class="hero-image-link"
+                href="<?= esc_url($projekt['project_link']) ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    class="hero-image"
+                    src="<?= esc_url($projekt['hero_image']['src']) ?>"
+                    alt="<?= esc_attr($projekt['hero_image']['alt']) ?>"
+                >
+            </a>
+
+        <?php else : ?>
+
+            <img
+                class="hero-image"
+                src="<?= esc_url($projekt['hero_image']['src']) ?>"
+                alt="<?= esc_attr($projekt['hero_image']['alt']) ?>"
+            >
+
+        <?php endif; ?>
 
         <div class="project-thumbnails">
 

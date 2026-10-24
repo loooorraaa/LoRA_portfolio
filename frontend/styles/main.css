@@ -271,15 +271,39 @@
 
 /* HERO-BILD RECHTS OBEN */
 
-.project-page .hero-image {
+
+/* HERO-BILD RECHTS OBEN */
+
+.project-page .hero-image-link {
     grid-column: 2;
     grid-row: 1;
+    display: block;
+    width: 100%;
+}
 
+.project-page .hero-image,
+.project-page .hero-image-link .hero-image {
     display: block;
     width: 100%;
     height: auto;
     aspect-ratio: 1.76 / 1;
     object-fit: cover;
+}
+
+/* HERO-BILD: HOVER-EFFEKT */
+
+.project-page .hero-image-link {
+    display: block;
+    cursor: pointer;
+}
+
+.project-page .hero-image-link .hero-image {
+    filter: grayscale(0%);
+    transition: filter 0.3s ease;
+}
+
+.project-page .hero-image-link:hover .hero-image {
+    filter: grayscale(100%);
 }
 
 
@@ -357,6 +381,13 @@
     font-size: 14px;
     color: #000;
     text-decoration: underline;
+}
+
+
+/* PROJEKTLINK AUSBLENDEN */
+
+.project-page .project-link {
+    display: none;
 }
 
 
