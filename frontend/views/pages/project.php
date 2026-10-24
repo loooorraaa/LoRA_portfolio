@@ -9,14 +9,14 @@ js_log($projekt);
 ?>
 
 <main>
-    <h1>Project</h1>
-    <h1><?= $projekt['titel'] ?></h1>
-    <img src="<?= $projekt['hero_image']['src'] ?>" alt="<?= $projekt['hero_image']['alt'] ?>">
-    <img src="<?= $projekt['project_image1']['src'] ?>" alt="<?= $projekt['project_image1']['alt'] ?>">
-    <img src="<?= $projekt['project_image2']['src'] ?>" alt="<?= $projekt['project_image2']['alt'] ?>">
-    <img src="<?= $projekt['project_image3']['src'] ?>" alt="<?= $projekt['project_image3']['alt'] ?>">
-    <p><?= $projekt['project_description'] ?></p>
-    <a href="<?= $projekt['project_link'] ?>">Projektlink</a>   
+   
+    <h1 class="title"><?= $projekt['titel'] ?></h1>
+    <img class="hero-image" src="<?= $projekt['hero_image']['src'] ?>" alt="<?= $projekt['hero_image']['alt'] ?>">
+    <img class="project-image1" src="<?= $projekt['project_image1']['src'] ?>" alt="<?= $projekt['project_image1']['alt'] ?>">
+    <img class="project-image2" src="<?= $projekt['project_image2']['src'] ?>" alt="<?= $projekt['project_image2']['alt'] ?>">
+    <img class="project-image3" src="<?= $projekt['project_image3']['src'] ?>" alt="<?= $projekt['project_image3']['alt'] ?>">
+    <p class="project-description"><?= $projekt['project_description'] ?></p>
+    <a class="project-link" href="<?= $projekt['project_link'] ?>">Projektlink</a>   
 </main>
 
     
