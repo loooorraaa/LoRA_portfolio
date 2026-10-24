@@ -182,17 +182,15 @@
 .project-page {
     width: 100%;
     box-sizing: border-box;
-    padding: 80px 5.3% 100px;
-    background-color: #fffef8;
+    padding: 80px 16% 100px;
 
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 0.8fr 1fr;
     grid-template-rows: auto auto;
-    column-gap: 60px;
-    row-gap: 60px;
+    column-gap: 30px;
+    row-gap: 30px;
     align-items: start;
 }
-
 
 /* LINKER TEXTBLOCK */
 
