@@ -9,8 +9,9 @@ js_log($projekt);
 
 <main>
     <h1 class="title"><?= $projekt['titel'] ?></h1>
+    <p class="project-description"><?= $projekt['project_description'] ?></p>
     
-    <div class="project-heroimage">
+    <div class="project-visuals">
         <img class="hero-image" src="<?= $projekt['hero_image']['src'] ?>" alt="<?= $projekt['hero_image']['alt'] ?>">
         
         <div class="project-thumbnails">
@@ -20,10 +21,6 @@ js_log($projekt);
         </div>
     </div>
 
-    <p class="project-description"><?= $projekt['project_description'] ?></p>
     <a class="project-link" href="<?= $projekt['project_link'] ?>">Projektlink</a>   
 </main>
-
-
-
     

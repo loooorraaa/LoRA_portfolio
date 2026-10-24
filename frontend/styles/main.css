@@ -195,6 +195,8 @@
 }
 
 
+/*LAYOUT FÜR PROJEKTE*/
+
 /* Haupt-Layout: 2 Spalten (Links Text, Rechts Bilder) */
 main {
   width: 100%;
@@ -208,7 +210,16 @@ main {
   align-items: start;
 }
 
-/* Linke Spalte: Titel, Beschreibung und Link untereinander */
+/* Wir machen das <main> oder einen virtuellen linken Bereich per Flexbox startklar, 
+   indem wir die Elemente auf der linken Seite in einen flexiblen Container stecken 
+   oder das Grid über Spalten steuern. 
+   Am einfachsten für dein HTML: Wir geben dem linken Bereich Luft nach oben per padding-top 
+   oder steuern es über flex-direction. */
+
+/* Da Titel, Beschreibung und Link direkt im <main> liegen, 
+   wandeln wir main in ein übergeordnetes Raster um und steuern den linken Block gezielt: */
+
+/* Titel (lässt sich jetzt ganz einfach mit margin-top nach unten schieben) */
 main .title {
   grid-column: 1;
   font-family: 'Source Code Pro', monospace;
@@ -219,6 +230,7 @@ main .title {
   color: #000;
 }
 
+/* Beschreibung direkt darunter */
 main .project-description {
   grid-column: 1;
   font-family: 'Source Code Pro', monospace;
@@ -228,6 +240,7 @@ main .project-description {
   color: #000;
 }
 
+/* Projektlink am Ende der linken Spalte */
 main .project-link {
   grid-column: 1;
   font-family: 'Source Code Pro', monospace;
@@ -241,12 +254,22 @@ main .project-link:hover {
   text-decoration: none;
 }
 
+/* DER TRICK: 
+   Wenn der ganze linke Block (Titel + Beschreibung) weiter nach unten soll, 
+   geben wir dem Titel einfach einen gezielten Abstand nach oben (margin-top). 
+   Passe den Wert (z. B. 40px oder 60px) einfach so an, bis die unterste Zeile 
+   der Beschreibung perfekt mit der Unterkante des rechten Hero-Bildes bündig ist: */
+main .title {
+  margin-top: 50px; /* Hier kannst du steuern, wie weit der ganze Block nach unten rutscht */
+}
+
+
 /* Rechte Spalte: Container für Hero-Bild und Vorschaubilder */
 .project-visuals {
   grid-column: 2;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Abstand zwischen Hero-Bild und der unteren Bilderrreihe */
+  gap: 48px; /* Abstand zwischen Hero-Bild und Thumbnails */
 }
 
 /* Großes Hero-Bild oben rechts */
@@ -259,18 +282,25 @@ main .project-link:hover {
 
 /* Container für die 3 kleineren Bilder nebeneinander */
 .project-thumbnails {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Teilt den Platz exakt in 3 Spalten auf */
-  gap: 20px; /* Abstand zwischen den drei Bildern */
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
 
-/* Die 3 Vorschaubilder selbst */
 .project-thumbnails img {
-  width: 100%;
-  height: 100px; /* Feste Höhe für eine saubere Galerie-Optik */
+  flex: 1;
+  height: 100px;
   object-fit: cover;
   display: block;
 }
+
+/* Bild 1 im Hochkant-Format */
+.project-thumbnails img.project-image1 {
+  height: 150px;
+  object-fit: cover;
+}
+
+
 
 
 
