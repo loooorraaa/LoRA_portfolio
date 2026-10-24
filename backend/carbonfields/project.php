@@ -14,7 +14,7 @@ Container::make('post_meta', 'Projekt')
         Field::make('image', 'project_image2', 'Zweites Projektbild')->set_required( true ),
         Field::make('image', 'project_image3', 'Drittes Projektbild')->set_required( true ),
         Field::make('media_gallery', 'project_gallery', 'Projekt Galerie'),
-        Field::make('textarea', 'project_description', 'Projektbeschreibung'),
+        Field::make('rich_text', 'project_description', 'Projektbeschreibung'),
         Field::make('text', 'project_link', 'Projektlink')
             ->set_attribute('type', 'url'),
     ]);
