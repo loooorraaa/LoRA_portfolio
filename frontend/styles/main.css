@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 @import "_fonts.css";
 @import "_resets.css";
 
@@ -7,8 +9,10 @@
     --color-white: #ffffff;
     --color-black: #000000;
     --color-accent: rgba(237, 221, 142, 1);
+
     /* gaps & sizes */
     --gap-around: 40px;
+
     /* fonts */
     --font-h1: normal 64px/120% serif;
 }
@@ -16,10 +20,7 @@
 /* Styling of all available layout components. */
 
 
-
-
-
-   /* HEADER*/
+/* HEADER */
 
 [data-layout="header"] {
     width: 100%;
@@ -61,8 +62,7 @@
 }
 
 
-
-   /* FOOTER*/
+/* FOOTER */
 
 [data-layout="footer"] {
     display: grid;
@@ -81,7 +81,6 @@
     color: #000;
 }
 
-
 /* Gemeinsame Listenformatierung */
 
 [data-layout="footer"] .footer-list {
@@ -94,7 +93,6 @@
     margin: 0;
     padding: 0;
 }
-
 
 /* Links im Footer */
 
@@ -109,7 +107,6 @@
     text-decoration: underline;
 }
 
-
 /* Linker Bereich: Rechtliches */
 
 [data-layout="footer"] .footer-legal {
@@ -117,7 +114,6 @@
     margin: 0;
     padding: 0;
 }
-
 
 /* Mittlerer Bereich: Instagram */
 
@@ -141,7 +137,6 @@
     text-decoration: underline;
 }
 
-
 /* Rechter Bereich: Hauptnavigation */
 
 [data-layout="footer"] .footer-main-nav {
@@ -156,7 +151,6 @@
     padding: 0;
 }
 
-
 /* Copyright */
 
 [data-layout="footer"] .footer-copyright {
@@ -164,9 +158,7 @@
 }
 
 
-
-   /*MOBILE DARSTELLUNG*/
-
+/* MOBILE DARSTELLUNG */
 
 @media (max-width: 600px) {
 
@@ -195,8 +187,7 @@
 }
 
 
-/*LAYOUT FÜR PROJEKTE*/
-
+/* LAYOUT FÜR PROJEKTE */
 
 
 /* PROJEKTSEITE */
@@ -232,7 +223,7 @@
     width: 100%;
     margin: 0 0 22px;
 
-    font-family: Arial, sans-serif;
+    font-family: "Inter Tight", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4;
@@ -243,8 +234,9 @@
     width: 100%;
     margin: 0;
 
-    font-family: Arial, sans-serif;
+    font-family: "Inter Tight", sans-serif;
     font-size: 16px;
+    font-weight: 400;
     line-height: 1.3;
 }
 
@@ -359,32 +351,31 @@
         order: 4;
         align-self: flex-start;
     }
-
 }
 
 
-
-
-
-
 /* Styling of all available page components. */
+
 [data-page] {
     width: 100%;
     height: 100%;
 }
 
 /* Styling of all available module components. */
+
 [data-module] {
     overflow: clip;
     position: relative;
     width: 100%;
 }
+
 [data-module="example"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
     & > .image {
         position: absolute;
         width: 100%;
@@ -392,6 +383,7 @@
         object-fit: cover;
         inset: 0;
     }
+
     & > .title {
         position: relative;
         color: white;
