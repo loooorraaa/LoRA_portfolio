@@ -195,7 +195,82 @@
 }
 
 
+/* Haupt-Layout: 2 Spalten (Links Text, Rechts Bilder) */
+main {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 80px 5.3%;
+  background-color: #fffef8;
+  
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px 60px;
+  align-items: start;
+}
 
+/* Linke Spalte: Titel, Beschreibung und Link untereinander */
+main .title {
+  grid-column: 1;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 24px 0;
+  color: #000;
+}
+
+main .project-description {
+  grid-column: 1;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  color: #000;
+}
+
+main .project-link {
+  grid-column: 1;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  color: #000;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+main .project-link:hover {
+  text-decoration: none;
+}
+
+/* Rechte Spalte: Container für Hero-Bild und Vorschaubilder */
+.project-visuals {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Abstand zwischen Hero-Bild und der unteren Bilderrreihe */
+}
+
+/* Großes Hero-Bild oben rechts */
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Container für die 3 kleineren Bilder nebeneinander */
+.project-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Teilt den Platz exakt in 3 Spalten auf */
+  gap: 20px; /* Abstand zwischen den drei Bildern */
+}
+
+/* Die 3 Vorschaubilder selbst */
+.project-thumbnails img {
+  width: 100%;
+  height: 100px; /* Feste Höhe für eine saubere Galerie-Optik */
+  object-fit: cover;
+  display: block;
+}
 
 
 
