@@ -3,21 +3,18 @@
 @import "_fonts.css";
 @import "_resets.css";
 
-/* Definition of base styles. */
+
+/* DEFINITION DER BASISSTILE */
+
 :root {
-    /* colors */
     --color-white: #ffffff;
     --color-black: #000000;
     --color-accent: rgba(237, 221, 142, 1);
 
-    /* gaps & sizes */
     --gap-around: 40px;
 
-    /* fonts */
     --font-h1: normal 64px/120% serif;
 }
-
-/* Styling of all available layout components. */
 
 
 /* HEADER */
@@ -44,7 +41,6 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-
             list-style: none;
             margin: 0;
             padding: 0;
@@ -81,7 +77,8 @@
     color: #000;
 }
 
-/* Gemeinsame Listenformatierung */
+
+/* FOOTER-LISTEN */
 
 [data-layout="footer"] .footer-list {
     display: flex;
@@ -94,7 +91,8 @@
     padding: 0;
 }
 
-/* Links im Footer */
+
+/* FOOTER-LINKS */
 
 [data-layout="footer"] a {
     color: #000;
@@ -107,15 +105,11 @@
     text-decoration: underline;
 }
 
-/* Linker Bereich: Rechtliches */
-
 [data-layout="footer"] .footer-legal {
     justify-self: start;
     margin: 0;
     padding: 0;
 }
-
-/* Mittlerer Bereich: Instagram */
 
 [data-layout="footer"] .footer-instagram {
     display: flex;
@@ -137,8 +131,6 @@
     text-decoration: underline;
 }
 
-/* Rechter Bereich: Hauptnavigation */
-
 [data-layout="footer"] .footer-main-nav {
     justify-self: end;
     margin: 0;
@@ -151,14 +143,12 @@
     padding: 0;
 }
 
-/* Copyright */
-
 [data-layout="footer"] .footer-copyright {
     margin-top: 0;
 }
 
 
-/* MOBILE DARSTELLUNG */
+/* MOBILE: HEADER UND FOOTER */
 
 @media (max-width: 600px) {
 
@@ -187,9 +177,6 @@
 }
 
 
-/* LAYOUT FÜR PROJEKTE */
-
-
 /* PROJEKTSEITE */
 
 .project-page {
@@ -206,7 +193,8 @@
     align-items: start;
 }
 
-/* Linker Textblock */
+
+/* LINKER TEXTBLOCK */
 
 .project-info {
     grid-column: 1;
@@ -230,6 +218,9 @@
     text-transform: uppercase;
 }
 
+
+/* BESCHREIBUNG UND ABSÄTZE */
+
 .project-info .project-description {
     width: 100%;
     margin: 0;
@@ -240,13 +231,47 @@
     line-height: 1.3;
 }
 
-/* Bildcontainer */
+/* Jeder Absatz erhält einen eigenen Abstand */
+
+.project-info .project-description p {
+    margin: 0 0 16px;
+    padding: 0;
+}
+
+/* Letzter Absatz ohne zusätzlichen Abstand */
+
+.project-info .project-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Listen aus dem Rich-Text-Feld */
+
+.project-info .project-description ul,
+.project-info .project-description ol {
+    margin: 0 0 16px;
+    padding-right: 20px;
+}
+
+.project-info .project-description li {
+    margin-bottom: 4px;
+}
+
+/* Links im Beschreibungstext */
+
+.project-info .project-description a {
+    color: #000;
+    text-decoration: underline;
+}
+
+
+/* BILDER */
 
 .project-visuals {
     display: contents;
 }
 
-/* Hero-Bild rechts oben */
+
+/* HERO-BILD RECHTS OBEN */
 
 .project-page .hero-image {
     grid-column: 2;
@@ -259,7 +284,8 @@
     object-fit: cover;
 }
 
-/* Drei Bilder unter dem Hero */
+
+/* DREI BILDER UNTER DEM HERO */
 
 .project-thumbnails {
     grid-column: 2;
@@ -279,7 +305,8 @@
     object-fit: cover;
 }
 
-/* Image 1: Hochkant, in der Mitte */
+
+/* ERSTES BILD: HOCHKANT IN DER MITTE */
 
 .project-thumbnails .project-image1 {
     grid-column: 2;
@@ -287,21 +314,24 @@
     aspect-ratio: 0.8 / 1;
 }
 
-/* Image 2: links */
+
+/* ZWEITES BILD: LINKS */
 
 .project-thumbnails .project-image2 {
     grid-column: 1;
     grid-row: 1;
 }
 
-/* Image 3: rechts */
+
+/* DRITTES BILD: RECHTS */
 
 .project-thumbnails .project-image3 {
     grid-column: 3;
     grid-row: 1;
 }
 
-/* Projektlink */
+
+/* PROJEKTLINK */
 
 .project-page .project-link {
     grid-column: 1;
@@ -310,13 +340,14 @@
     align-self: start;
 
     margin-top: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Inter Tight", sans-serif;
     font-size: 14px;
     color: #000;
     text-decoration: underline;
 }
 
-/* Mobile */
+
+/* MOBILE: PROJEKTSEITE */
 
 @media (max-width: 600px) {
 
@@ -354,14 +385,15 @@
 }
 
 
-/* Styling of all available page components. */
+/* SEITENKOMPONENTEN */
 
 [data-page] {
     width: 100%;
     height: 100%;
 }
 
-/* Styling of all available module components. */
+
+/* MODULE */
 
 [data-module] {
     overflow: clip;
@@ -392,27 +424,19 @@
     }
 }
 
-/* Styling of all available teaser components. */
 
-/* Styling of utility classes, can be added anywhere in the project. */
+/* BREAKPOINTS */
 
-/* BREAKPOINT: 3xl */
 @media (max-width: 1514px) {}
 
-/* BREAKPOINT: xl */
 @media (max-width: 1280px) {}
 
-/* BREAKPOINT: lg */
 @media (max-width: 1024px) {}
 
-/* BREAKPOINT: md */
 @media (max-width: 768px) {}
 
-/* BREAKPOINT: sm */
 @media (max-width: 640px) {}
 
-/* BREAKPOINT: xs */
 @media (max-width: 425px) {}
 
-/* BREAKPOINT: xxs */
 @media (max-width: 400px) {}
