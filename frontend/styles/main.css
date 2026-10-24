@@ -222,7 +222,7 @@
 /* BESCHREIBUNG UND ABSÄTZE */
 
 .project-info .project-description {
-    width: 100%;
+    width: 75%;
     margin: 0;
 
     font-family: "Inter Tight", sans-serif;
@@ -424,6 +424,12 @@
     }
 }
 
+/* WEBSITEWEIT: Fett nur in Medium (500) darstellen */
+
+strong,
+b {
+    font-weight: 500;
+}
 
 /* BREAKPOINTS */
 
