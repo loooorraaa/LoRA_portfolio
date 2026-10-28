@@ -16,6 +16,17 @@
     --font-h1: normal 64px/120% serif;
 }
 
+/* STARTSEITE – HINTERGRUND UND HEADER */
+
+html,
+body.home {
+    background-color: #DECA6A !important;
+}
+
+body.home [data-layout="header"] {
+    background-color: #DECA6A !important;
+}
+
 
 /* HEADER */
 
@@ -483,6 +494,7 @@
 
     /* Hintergrundfarbe */
     background-color: #DECA6A;
+    
 
     /* Bezugspunkt für alle Bilder */
     overflow: hidden;
@@ -512,7 +524,7 @@
     height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: #DFCE6C;
+    background-color: #DECA6A;
 }
 
 
