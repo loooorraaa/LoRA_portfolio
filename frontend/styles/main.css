@@ -28,6 +28,7 @@ body.home [data-layout="header"] {
 }
 
 
+
 /* HEADER */
 
 [data-layout="header"] {
@@ -45,7 +46,6 @@ body.home [data-layout="header"] {
         width: 100%;
         padding: 0;
         margin: 0;
-        margin-left: 30px;
         box-sizing: border-box;
 
         .nav {
@@ -62,7 +62,9 @@ body.home [data-layout="header"] {
                 color: #000;
                 font-family: 'Source Code Pro', monospace;
                 font-size: 11px;
+                font-weight: 400;
                 line-height: 1.5;
+                letter-spacing: 0;
             }
         }
     }
@@ -84,7 +86,9 @@ body.home [data-layout="header"] {
     background-color: transparent;
     font-family: 'Source Code Pro', monospace;
     font-size: 11px;
+    font-weight: 400;
     line-height: 1.5;
+    letter-spacing: 0;
     color: #000;
 }
 
@@ -103,24 +107,32 @@ body.home [data-layout="header"] {
 }
 
 
+
 /* FOOTER-LINKS */
 
 [data-layout="footer"] a {
     color: #000;
     text-decoration: none;
-    font: inherit;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
     letter-spacing: 0;
 }
 
 [data-layout="footer"] a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
+
 
 [data-layout="footer"] .footer-legal {
     justify-self: start;
     margin: 0;
     padding: 0;
 }
+
+
+/* FOOTER-INSTAGRAM */
 
 [data-layout="footer"] .footer-instagram {
     display: flex;
@@ -129,8 +141,10 @@ body.home [data-layout="header"] {
     justify-self: center;
 
     font-family: 'Source Code Pro', monospace;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 400;
     line-height: 1.5;
+    letter-spacing: 0;
 }
 
 [data-layout="footer"] .footer-instagram a {
@@ -142,11 +156,14 @@ body.home [data-layout="header"] {
     text-decoration: underline;
 }
 
+
+/* FOOTER-HAUPTNAVIGATION */
+
 [data-layout="footer"] .footer-main-nav {
     justify-self: end;
     margin: 0;
     padding: 0;
-    transform: translateX(30px);
+    transform: none;
 }
 
 [data-layout="footer"] .footer-main-nav .footer-list {
@@ -157,6 +174,11 @@ body.home [data-layout="header"] {
 
 [data-layout="footer"] .footer-copyright {
     margin-top: 0;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
 }
 
 
@@ -187,6 +209,7 @@ body.home [data-layout="header"] {
         justify-self: end;
     }
 }
+
 
 
 /* PROJEKTSEITE */
