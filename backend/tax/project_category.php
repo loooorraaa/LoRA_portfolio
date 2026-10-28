@@ -1,18 +1,18 @@
    <?php
    register_taxonomy(
-     'person_department',
-     ['person'],
+     'project_category',
+     ['project'],
      [
-       'label' => 'Abteilung',
+       'label' => 'Projektkategorie',
        'labels' => [
-         'name' => 'Abteilungen',
-         'singular_name' => 'Abteilung',
-         'menu_name' => 'Abteilungen',
-         'all_items' => 'Alle Abteilungen',
-         'edit_item' => 'Abteilung bearbeiten',
-         'view_item' => 'Abteilung ansehen',
-         'update_item' => 'Abteilung updaten',
-         'add_new_item' => 'Neue Abteilung hinzufügen',
+         'name' => 'Projektkategorien',
+         'singular_name' => 'Projektkategorie',
+         'menu_name' => 'Projektkategorien',
+         'all_items' => 'Alle Projektkategorien',
+         'edit_item' => 'Projektkategorie bearbeiten',
+         'view_item' => 'Projektkategorie ansehen',
+         'update_item' => 'Projektkategorie updaten',
+         'add_new_item' => 'Neue Projektkategorie hinzufügen',
        ],
        'public' => true,
        'show_in_rest' => true,
@@ -20,6 +20,6 @@
        'show_admin_column' => true,
        'query_var' => true,
        'hierarchical' => true,
-       'rewrite' => ['slug' => 'abteilung'],
+       'rewrite' => ['slug' => 'projektkategorie'],
      ],
    );
