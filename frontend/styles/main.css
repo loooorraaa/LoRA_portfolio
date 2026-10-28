@@ -494,87 +494,98 @@
 [data-module="hero_start"] .logo {
     position: absolute;
 
-    top: 12%;
+    top: -8%;
     left: 50%;
     transform: translateX(-50%);
 
-    width: 200px;
+    width: 350px;
     height: auto;
 
     object-fit: contain;
 }
 
-/* BILD 1 – links, hochformatig */
+
+/* HERO START – BILDANORDNUNG */
+
+[data-module="hero_start"] {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #DFCE6C;
+}
+
+
+/* BILD 1 – links, schmaler und höher */
 
 [data-module="hero_start"] .image1 {
     position: absolute;
 
-    left: 6.8%;
-    top: 57%;
+    left: 6.5%;
+    bottom: 14%;
 
-    width: 15.1%;
-    height: 29.5%;
+    width: 12%;
+    height: 30%;
 
     object-fit: cover;
 }
 
-/* BILD 2 – links der Mitte, querformatig */
+/* BILD 2 – links der Mitte */
 
 [data-module="hero_start"] .image2 {
     position: absolute;
 
-    left: 25.9%;
-    top: 62.5%;
+    left: 22%;
+    bottom: 14%;
 
-    width: 18.5%;
-    height: 24%;
+    width: 17.5%;
+    height: 26.5%;
 
     object-fit: cover;
 }
 
-/* BILD 3 – Mitte, hochformatig */
+/* BILD 3 – Mitte, kleinstes Bild */
 
 [data-module="hero_start"] .image3 {
     position: absolute;
 
-    left: 48.5%;
-    top: 67%;
+    left: 43%;
+    bottom: 14%;
 
-    width: 10.9%;
-    height: 19.5%;
+    width: 10.5%;
+    height: 22.5%;
 
     object-fit: cover;
 }
 
-/* BILD 4 – rechts der Mitte, gross */
+/* BILD 4 – rechts der Mitte, grösstes Bild */
 
 [data-module="hero_start"] .image4 {
     position: absolute;
 
-    left: 63.5%;
-    top: 49.5%;
+    left: 57%;
+    bottom: 14%;
 
-    width: 13.8%;
-    height: 37%;
+    width: 13.3%;
+    height: 40%;
 
     object-fit: cover;
 }
 
-/* BILD 5 – rechts, hochformatig */
+/* BILD 5 – rechts */
 
 [data-module="hero_start"] .image5 {
     position: absolute;
 
-    left: 81.3%;
-    top: 61.5%;
+    left: 73.8%;
+    bottom: 14%;
 
-    width: 11.8%;
-    height: 25.5%;
+    width: 10.5%;
+    height: 27.5%;
 
     object-fit: cover;
 }
-
-
 
 
 
