@@ -432,6 +432,7 @@
 }
 
 
+
 /* SEITENKOMPONENTEN */
 
 [data-page] {
@@ -470,6 +471,112 @@
         text-align: center;
     }
 }
+
+
+
+/* HERO START */
+
+[data-module="hero_start"] {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    /* Hintergrundfarbe */
+    background-color: #DECA6A;
+
+    /* Bezugspunkt für alle Bilder */
+    overflow: hidden;
+}
+
+/* LOGO */
+
+[data-module="hero_start"] .logo {
+    position: absolute;
+
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 200px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+/* BILD 1 – links, hochformatig */
+
+[data-module="hero_start"] .image1 {
+    position: absolute;
+
+    left: 6.8%;
+    top: 57%;
+
+    width: 15.1%;
+    height: 29.5%;
+
+    object-fit: cover;
+}
+
+/* BILD 2 – links der Mitte, querformatig */
+
+[data-module="hero_start"] .image2 {
+    position: absolute;
+
+    left: 25.9%;
+    top: 62.5%;
+
+    width: 18.5%;
+    height: 24%;
+
+    object-fit: cover;
+}
+
+/* BILD 3 – Mitte, hochformatig */
+
+[data-module="hero_start"] .image3 {
+    position: absolute;
+
+    left: 48.5%;
+    top: 67%;
+
+    width: 10.9%;
+    height: 19.5%;
+
+    object-fit: cover;
+}
+
+/* BILD 4 – rechts der Mitte, gross */
+
+[data-module="hero_start"] .image4 {
+    position: absolute;
+
+    left: 63.5%;
+    top: 49.5%;
+
+    width: 13.8%;
+    height: 37%;
+
+    object-fit: cover;
+}
+
+/* BILD 5 – rechts, hochformatig */
+
+[data-module="hero_start"] .image5 {
+    position: absolute;
+
+    left: 81.3%;
+    top: 61.5%;
+
+    width: 11.8%;
+    height: 25.5%;
+
+    object-fit: cover;
+}
+
+
+
+
 
 /* WEBSITEWEIT: Fett nur in Medium (500) darstellen */
 
