@@ -25,8 +25,7 @@
     box-sizing: border-box;
 
     background-color: transparent;
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 100;
 
     .nav-container {
@@ -518,75 +517,54 @@
 
 
 /* BILD 1 – links, schmaler und höher */
-
 [data-module="hero_start"] .image1 {
     position: absolute;
-
     left: 11.1%;
-    bottom: 14%;
-
+    bottom: 25%;
     width: 12%;
     height: 30%;
-
     object-fit: cover;
 }
 
 /* BILD 2 – links der Mitte */
-
 [data-module="hero_start"] .image2 {
     position: absolute;
-
     left: 26.6%;
-    bottom: 14%;
-
+    bottom: 25%;
     width: 17.5%;
     height: 26.5%;
-
     object-fit: cover;
 }
 
 /* BILD 3 – Mitte, kleinstes Bild */
-
 [data-module="hero_start"] .image3 {
     position: absolute;
-
     left: 47.6%;
-    bottom: 14%;
-
+    bottom: 25%;
     width: 10.5%;
     height: 22.5%;
-
     object-fit: cover;
 }
 
 /* BILD 4 – rechts der Mitte, grösstes Bild */
-
 [data-module="hero_start"] .image4 {
     position: absolute;
-
     left: 61.6%;
-    bottom: 14%;
-
+    bottom: 25%;
     width: 13.3%;
     height: 40%;
-
     object-fit: cover;
 }
 
 /* BILD 5 – rechts */
-
 [data-module="hero_start"] .image5 {
     position: absolute;
-
     left: 78.4%;
-    bottom: 14%;
-
+    bottom: 25%;
     width: 10.5%;
     height: 27.5%;
-
     object-fit: cover;
 }
-
 
 
 /* WEBSITEWEIT: Fett nur in Medium (500) darstellen */
