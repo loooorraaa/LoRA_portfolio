@@ -12,6 +12,17 @@ Container::make('post_meta', 'Module')
                 Field::make('text', 'title', 'Titel')->set_required(),
                 Field::make('image', 'image', 'Bild')->set_required(),
             ])
+             // -> HERO STARTSEITE
+              ->add_fields('hero_start', 'Hero Startseite', [
+               Field::make('image', 'logo', 'Logo')->set_required(),
+               Field::make('image', 'image_1', 'Bild 1')->set_required(),
+               Field::make('image', 'image_2', 'Bild 2')->set_required(),  
+               Field::make('image', 'image_3', 'Bild 3')->set_required(),
+               Field::make('image', 'image_4', 'Bild 4')->set_required(),
+               Field::make('image', 'image_5', 'Bild 5')->set_required(),
+            ])
+
+
             // todo: add new modules here
             // -> SETTINGS
             ->set_layout('tabbed-vertical')
