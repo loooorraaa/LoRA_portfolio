@@ -40,6 +40,13 @@ Container::make('post_meta', 'Module')
                 Field::make('image', 'image_3', 'Bild 3')->set_required(),
             ])
 
+            // -> HERO CONTACTME SEITE
+              ->add_fields('hero_contactme', 'Hero ContactMe Seite', [
+                Field::make('image', 'logo', 'Logo')->set_required(),
+                Field::make('image', 'image_1', 'Bild 1')->set_required(),
+                Field::make('image', 'image_2', 'Bild 2')->set_required(),
+            ])
+
 
             // todo: add new modules here
             // -> SETTINGS
@@ -91,6 +98,17 @@ function render_modules(): void {
                     $module[$key] = get_media_by_id($module[$key], 'full');
                 }
                 break;
+
+            // -> HERO CONTACTME SEITE
+            case 'hero_contactme':
+                $module['logo'] = get_media_by_id($module['logo'], 'full');
+
+                for ($i = 1; $i <= 2; $i++) {
+                    $key = 'image_' . $i;
+                    $module[$key] = get_media_by_id($module[$key], 'full');
+                }
+                break;
+
 
             // todo: add data modifications for modules here as a new case
         }

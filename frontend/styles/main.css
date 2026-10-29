@@ -20,11 +20,11 @@
 
 html,
 body.home {
-    background-color: #9BB2C6 !important;
+    background-color: #884448 !important;
 }
 
 body.home [data-layout="header"] {
-    background-color: #9BB2C6 !important;
+    background-color: #884448 !important;
 }
 
 
@@ -750,6 +750,72 @@ body.home [data-layout="header"] {
     object-position: center center;
 }
 
+
+/* HERO CONTACTME SEITE */
+
+[data-module="hero_aboutme"] {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    box-sizing: border-box;
+    background-color: #884448;
+    overflow: hidden;
+}
+
+
+/* LOGO */
+
+[data-module="hero_aboutme"] .logo {
+    position: absolute;
+
+    top: -68.5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 350px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* BILD 1 */
+[data-module="hero_contactme"] .image1 {
+    position: absolute;
+    top: 230px;
+    left: 24.8%;
+
+    width: 13%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* BILD 2 */
+[data-module="hero_contactme"] .image2 {
+    position: absolute;
+    top: 230px;
+    left: 41.5%;
+
+    width: 10%;
+    height: 165px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+/* BILD 3 */
+[data-module="hero_contactme"] .image3 {
+    position: absolute;
+    top: 230px;
+    left: 55.2%;
+
+    width: 16%;
+    height: 205px;
+    object-fit: cover;
+    object-position: center center;
+}
 
 
 
