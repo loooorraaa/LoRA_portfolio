@@ -637,22 +637,17 @@ body.home [data-layout="header"] {
 }
 
 
-
-/* BILD 1 */
-
-
 /* BILD 1 */
 
 [data-module="hero_works"] .image1 {
     position: absolute;
     top: 36%;
-    left: 21%;
+    left: 24.8%;
 
-    width: 12%;
+    width: 13%;
     height: 300px;
-
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
 }
 
 
@@ -661,11 +656,12 @@ body.home [data-layout="header"] {
 [data-module="hero_works"] .image2 {
     position: absolute;
     top: 36%;
-    left: 37%;
+    left: 41.5%;
 
-    width: 9%;
+    width: 10%;
     height: 165px;
     object-fit: cover;
+    object-position: center center;
 }
 
 
@@ -674,11 +670,12 @@ body.home [data-layout="header"] {
 [data-module="hero_works"] .image3 {
     position: absolute;
     top: 36%;
-    left: 51%;
+    left: 55.2%;
 
-    width: 15%;
+    width: 16%;
     height: 205px;
     object-fit: cover;
+    object-position: center center;
 }
 
 
@@ -687,12 +684,14 @@ body.home [data-layout="header"] {
 [data-module="hero_works"] .image4 {
     position: absolute;
     top: 36.3%;
-    left: 72%;
+    left: 74.9%;
 
-    width: 13%;
+    width: 14%;
     height: 245px;
     object-fit: cover;
+    object-position: center center;
 }
+
 
 
 
