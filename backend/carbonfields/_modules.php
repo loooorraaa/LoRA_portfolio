@@ -23,6 +23,15 @@ Container::make('post_meta', 'Module')
                 Field::make('image', 'image_5', 'Bild 5')->set_required(),
             ])
 
+            //-> HERO WORKSEITE
+            ->add_fields('hero_works', 'Hero Workseite', [
+                Field::make('image', 'logo', 'Logo')->set_required(),
+                Field::make('image', 'image_1', 'Bild 1')->set_required(),
+                Field::make('image', 'image_2', 'Bild 2')->set_required(),
+                Field::make('image', 'image_3', 'Bild 3')->set_required(),
+                Field::make('image', 'image_4', 'Bild 4')->set_required(),
+            ])
+
             // todo: add new modules here
             // -> SETTINGS
             ->set_layout('tabbed-vertical')
@@ -49,6 +58,16 @@ function render_modules(): void {
                 $module['logo'] = get_media_by_id($module['logo'], 'full');
 
                 for ($i = 1; $i <= 5; $i++) {
+                    $key = 'image_' . $i;
+                    $module[$key] = get_media_by_id($module[$key], 'full');
+                }
+                break;
+
+            // -> HERO WORKSEITE
+            case 'hero_works':
+                $module['logo'] = get_media_by_id($module['logo'], 'full');
+                
+                for ($i = 1; $i <= 4; $i++) {
                     $key = 'image_' . $i;
                     $module[$key] = get_media_by_id($module[$key], 'full');
                 }
