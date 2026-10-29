@@ -751,9 +751,11 @@ body.home [data-layout="header"] {
 }
 
 
+
+
 /* HERO CONTACTME SEITE */
 
-[data-module="hero_aboutme"] {
+[data-module="hero_contactme"] {
     position: relative;
     width: 100%;
     height: 580px;
@@ -765,7 +767,7 @@ body.home [data-layout="header"] {
 
 /* LOGO */
 
-[data-module="hero_aboutme"] .logo {
+[data-module="hero_contactme"] .logo {
     position: absolute;
 
     top: -68.5px;
@@ -778,22 +780,8 @@ body.home [data-layout="header"] {
     object-fit: contain;
 }
 
-
 /* BILD 1 */
 [data-module="hero_contactme"] .image1 {
-    position: absolute;
-    top: 230px;
-    left: 24.8%;
-
-    width: 13%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center center;
-}
-
-
-/* BILD 2 */
-[data-module="hero_contactme"] .image2 {
     position: absolute;
     top: 230px;
     left: 41.5%;
@@ -804,9 +792,8 @@ body.home [data-layout="header"] {
     object-position: center center;
 }
 
-
-/* BILD 3 */
-[data-module="hero_contactme"] .image3 {
+/* BILD 2 */
+[data-module="hero_contactme"] .image2 {
     position: absolute;
     top: 230px;
     left: 55.2%;
@@ -816,6 +803,10 @@ body.home [data-layout="header"] {
     object-fit: cover;
     object-position: center center;
 }
+
+
+
+
 
 
 
