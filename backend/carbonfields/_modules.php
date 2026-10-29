@@ -32,6 +32,15 @@ Container::make('post_meta', 'Module')
                 Field::make('image', 'image_4', 'Bild 4')->set_required(),
             ])
 
+            // -> HERO ABOUTME SEITE
+             ->add_fields('hero_aboutme', 'Hero AboutMe Seite', [
+                Field::make('image', 'logo', 'Logo')->set_required(),
+                Field::make('image', 'image_1', 'Bild 1')->set_required(),
+                Field::make('image', 'image_2', 'Bild 2')->set_required(),
+                Field::make('image', 'image_3', 'Bild 3')->set_required(),
+            ])
+
+
             // todo: add new modules here
             // -> SETTINGS
             ->set_layout('tabbed-vertical')
@@ -68,6 +77,16 @@ function render_modules(): void {
                 $module['logo'] = get_media_by_id($module['logo'], 'full');
                 
                 for ($i = 1; $i <= 4; $i++) {
+                    $key = 'image_' . $i;
+                    $module[$key] = get_media_by_id($module[$key], 'full');
+                }
+                break;
+
+            // -> HERO ABOUTME SEITE
+            case 'hero_aboutme':
+                $module['logo'] = get_media_by_id($module['logo'], 'full');
+
+                for ($i = 1; $i <= 3; $i++) {
                     $key = 'image_' . $i;
                     $module[$key] = get_media_by_id($module[$key], 'full');
                 }
