@@ -638,10 +638,9 @@ body.home [data-layout="header"] {
 
 
 /* BILD 1 */
-
 [data-module="hero_works"] .image1 {
     position: absolute;
-    top: 36%;
+    top: 24%;
     left: 24.8%;
 
     width: 13%;
@@ -652,10 +651,9 @@ body.home [data-layout="header"] {
 
 
 /* BILD 2 */
-
 [data-module="hero_works"] .image2 {
     position: absolute;
-    top: 36%;
+    top: 24%;
     left: 41.5%;
 
     width: 10%;
@@ -666,10 +664,9 @@ body.home [data-layout="header"] {
 
 
 /* BILD 3 */
-
 [data-module="hero_works"] .image3 {
     position: absolute;
-    top: 36%;
+    top: 24%;
     left: 55.2%;
 
     width: 16%;
@@ -680,10 +677,9 @@ body.home [data-layout="header"] {
 
 
 /* BILD 4 */
-
 [data-module="hero_works"] .image4 {
     position: absolute;
-    top: 36.3%;
+    top: 24%;
     left: 74.9%;
 
     width: 14%;
