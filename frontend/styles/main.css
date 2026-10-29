@@ -20,11 +20,11 @@
 
 html,
 body.home {
-    background-color: #AAA027 !important;
+    background-color: #9BB2C6 !important;
 }
 
 body.home [data-layout="header"] {
-    background-color: #AAA027 !important;
+    background-color: #9BB2C6 !important;
 }
 
 
@@ -691,7 +691,7 @@ body.home [data-layout="header"] {
     width: 100%;
     height: 580px;
     box-sizing: border-box;
-    background-color: #AAA027;
+    background-color: #9BB2C6;
     overflow: hidden;
 }
 
