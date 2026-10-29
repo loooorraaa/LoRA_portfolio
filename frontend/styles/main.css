@@ -601,7 +601,101 @@ body.home [data-layout="header"] {
     object-fit: cover;
 }
 
-//HERO WORKSEITE
+
+
+
+/* HERO WORKSEITE */
+
+
+[data-module="hero_works"] {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    /* Hintergrundfarbe */
+    background-color: #AAA027;
+    
+
+    /* Bezugspunkt für alle Bilder */
+    overflow: hidden;
+}
+
+/* LOGO */
+
+[data-module="hero_works"] .logo {
+    position: absolute;
+
+    top: -8%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 350px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+
+/* BILD 1 */
+
+
+/* BILD 1 */
+
+[data-module="hero_works"] .image1 {
+    position: absolute;
+    top: 36%;
+    left: 21%;
+
+    width: 12%;
+    height: 300px;
+
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+/* BILD 2 */
+
+[data-module="hero_works"] .image2 {
+    position: absolute;
+    top: 36%;
+    left: 37%;
+
+    width: 9%;
+    height: 165px;
+    object-fit: cover;
+}
+
+
+/* BILD 3 */
+
+[data-module="hero_works"] .image3 {
+    position: absolute;
+    top: 36%;
+    left: 51%;
+
+    width: 15%;
+    height: 205px;
+    object-fit: cover;
+}
+
+
+/* BILD 4 */
+
+[data-module="hero_works"] .image4 {
+    position: absolute;
+    top: 36.3%;
+    left: 72%;
+
+    width: 13%;
+    height: 245px;
+    object-fit: cover;
+}
+
+
+
 
 
 
