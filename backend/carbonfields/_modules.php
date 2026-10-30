@@ -1,3 +1,4 @@
+
 <?php
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
@@ -23,7 +24,7 @@ Container::make('post_meta', 'Module')
                 Field::make('image', 'image_5', 'Bild 5')->set_required(),
             ])
 
-            //-> HERO WORKSEITE
+            // -> HERO WORKSEITE
             ->add_fields('hero_works', 'Hero Workseite', [
                 Field::make('image', 'logo', 'Logo')->set_required(),
                 Field::make('image', 'image_1', 'Bild 1')->set_required(),
@@ -33,7 +34,7 @@ Container::make('post_meta', 'Module')
             ])
 
             // -> HERO ABOUTME SEITE
-             ->add_fields('hero_aboutme', 'Hero AboutMe Seite', [
+            ->add_fields('hero_aboutme', 'Hero AboutMe Seite', [
                 Field::make('image', 'logo', 'Logo')->set_required(),
                 Field::make('image', 'image_1', 'Bild 1')->set_required(),
                 Field::make('image', 'image_2', 'Bild 2')->set_required(),
@@ -41,27 +42,52 @@ Container::make('post_meta', 'Module')
             ])
 
             // -> HERO CONTACTME SEITE
-              ->add_fields('hero_contactme', 'Hero ContactMe Seite', [
+            ->add_fields('hero_contactme', 'Hero ContactMe Seite', [
                 Field::make('image', 'logo', 'Logo')->set_required(),
                 Field::make('image', 'image_1', 'Bild 1')->set_required(),
                 Field::make('image', 'image_2', 'Bild 2')->set_required(),
             ])
 
-            // -> PROJEKTÜBERISCHT (SOMEWORK)
+            // -> PROJEKTÜBERBLICK (SOMEWORK)
             ->add_fields('somework', 'Projektüberblick (somework)', [
                 Field::make('text', 'title', 'Titel')->set_required(),
+
+                // BILD 1
                 Field::make('image', 'image_1', 'Bild 1')->set_required(),
                 Field::make('rich_text', 'subline_1', 'Untertitel 1')->set_required(),
-                Field::make('association', 'teaser_link_1', 'Projektmit Bildverknüpfen') ->set_types([
-        [
-            'type' => 'post',
-            'post_type' => 'project',
-        ],
-    ])
-    ->set_max(1),
+                Field::make('association', 'teaser_link_1', 'Projekt mit Bild 1 verknüpfen')
+                    ->set_types([
+                        [
+                            'type' => 'post',
+                            'post_type' => 'project',
+                        ],
+                    ])
+                    ->set_max(1),
 
+                // BILD 2
+                Field::make('image', 'image_2', 'Bild 2')->set_required(),
+                Field::make('rich_text', 'subline_2', 'Untertitel 2')->set_required(),
+                Field::make('association', 'teaser_link_2', 'Projekt mit Bild 2 verknüpfen')
+                    ->set_types([
+                        [
+                            'type' => 'post',
+                            'post_type' => 'project',
+                        ],
+                    ])
+                    ->set_max(1),
+
+                // BILD 3
+                Field::make('image', 'image_3', 'Bild 3')->set_required(),
+                Field::make('rich_text', 'subline_3', 'Untertitel 3')->set_required(),
+                Field::make('association', 'teaser_link_3', 'Projekt mit Bild 3 verknüpfen')
+                    ->set_types([
+                        [
+                            'type' => 'post',
+                            'post_type' => 'project',
+                        ],
+                    ])
+                    ->set_max(1),
             ])
-
 
             // todo: add new modules here
             // -> SETTINGS
@@ -97,7 +123,7 @@ function render_modules(): void {
             // -> HERO WORKSEITE
             case 'hero_works':
                 $module['logo'] = get_media_by_id($module['logo'], 'full');
-                
+
                 for ($i = 1; $i <= 4; $i++) {
                     $key = 'image_' . $i;
                     $module[$key] = get_media_by_id($module[$key], 'full');
@@ -124,13 +150,11 @@ function render_modules(): void {
                 }
                 break;
 
-           // -> PROJEKTÜBERBLICK (SOMEWORK)
-        case 'somework':
-               
-               break;   
+            // -> PROJEKTÜBERBLICK (SOMEWORK)
+            case 'somework':
+                break;
 
-
-            // todo: add data modifications for modules here as a new case
+            // todo: add data modifications for modules here
         }
 
         // -> Laden des Templates basierend auf dem Modultyp und weitergeben der Daten
