@@ -89,6 +89,29 @@ Container::make('post_meta', 'Module')
                     ->set_max(1),
             ])
 
+           
+            // INFO LS
+            ->add_fields('info_ls', 'Informationen LS', [
+                Field::make('text', 'title', 'Titel')->set_required(),
+                Field::make('image', 'image_1', 'Bild 1')->set_required(),
+                Field::make('image', 'image_2', 'Bild 2'),
+                Field::make('rich_text', 'description', 'Beschreibung')->set_required(),
+
+                Field::make('text', 'link_text', 'Verlinkungstext')->set_required(),
+
+                Field::make('association', 'link_page', 'Verlinkte Seite')
+                ->set_types([
+            [
+                'type' => 'post',
+                'post_type' => 'page',
+            ],
+        ])
+        ->set_max(1)
+        ->set_min(1)
+])
+
+
+
             // todo: add new modules here
             // -> SETTINGS
             ->set_layout('tabbed-vertical')
@@ -153,6 +176,11 @@ function render_modules(): void {
             // -> PROJEKTÜBERBLICK (SOMEWORK)
             case 'somework':
                 break;
+
+            // -> INFO LS
+            case 'info_ls':
+                
+                break;    
 
             // todo: add data modifications for modules here
         }
