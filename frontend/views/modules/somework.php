@@ -26,74 +26,92 @@ $image_url_3 = wp_get_attachment_image_url($image_3, 'full');
 
 <section data-module="somework">
 
-    <h2><?= esc_html($title) ?></h2>
+    <h2 class="somework-title">
+        <?= esc_html($title) ?>
+    </h2>
+
 
     <!-- BILD 1 -->
+
     <?php if ($image_url_1) : ?>
 
-        <?php if ($project_id_1) : ?>
-            <a href="<?= esc_url(get_permalink($project_id_1)) ?>">
-        <?php endif; ?>
+        <div class="somework-item somework-item--1">
 
-        <img
-            src="<?= esc_url($image_url_1) ?>"
-            alt="<?= esc_attr(get_post_meta($image_1, '_wp_attachment_image_alt', true)) ?>"
-        >
+            <?php if ($project_id_1) : ?>
+                <a href="<?= esc_url(get_permalink($project_id_1)) ?>">
+            <?php endif; ?>
 
-        <?php if ($project_id_1) : ?>
-            </a>
-        <?php endif; ?>
+                <img
+                    src="<?= esc_url($image_url_1) ?>"
+                    alt="<?= esc_attr(get_post_meta($image_1, '_wp_attachment_image_alt', true)) ?>"
+                >
+
+            <?php if ($project_id_1) : ?>
+                </a>
+            <?php endif; ?>
+
+            <div class="somework-subline">
+                <?= wp_kses_post(wpautop($subline_1)) ?>
+            </div>
+
+        </div>
 
     <?php endif; ?>
-
-    <div class="subline">
-        <?= wpautop($subline_1) ?>
-    </div>
 
 
     <!-- BILD 2 -->
+
     <?php if ($image_url_2) : ?>
 
-        <?php if ($project_id_2) : ?>
-            <a href="<?= esc_url(get_permalink($project_id_2)) ?>">
-        <?php endif; ?>
+        <div class="somework-item somework-item--2">
 
-        <img
-            src="<?= esc_url($image_url_2) ?>"
-            alt="<?= esc_attr(get_post_meta($image_2, '_wp_attachment_image_alt', true)) ?>"
-        >
+            <div class="somework-subline">
+                <?= wp_kses_post(wpautop($subline_2)) ?>
+            </div>
 
-        <?php if ($project_id_2) : ?>
-            </a>
-        <?php endif; ?>
+            <?php if ($project_id_2) : ?>
+                <a href="<?= esc_url(get_permalink($project_id_2)) ?>">
+            <?php endif; ?>
+
+                <img
+                    src="<?= esc_url($image_url_2) ?>"
+                    alt="<?= esc_attr(get_post_meta($image_2, '_wp_attachment_image_alt', true)) ?>"
+                >
+
+            <?php if ($project_id_2) : ?>
+                </a>
+            <?php endif; ?>
+
+        </div>
 
     <?php endif; ?>
-
-    <div class="subline">
-        <?= wpautop($subline_2) ?>
-    </div>
 
 
     <!-- BILD 3 -->
+
     <?php if ($image_url_3) : ?>
 
-        <?php if ($project_id_3) : ?>
-            <a href="<?= esc_url(get_permalink($project_id_3)) ?>">
-        <?php endif; ?>
+        <div class="somework-item somework-item--3">
 
-        <img
-            src="<?= esc_url($image_url_3) ?>"
-            alt="<?= esc_attr(get_post_meta($image_3, '_wp_attachment_image_alt', true)) ?>"
-        >
+            <?php if ($project_id_3) : ?>
+                <a href="<?= esc_url(get_permalink($project_id_3)) ?>">
+            <?php endif; ?>
 
-        <?php if ($project_id_3) : ?>
-            </a>
-        <?php endif; ?>
+                <img
+                    src="<?= esc_url($image_url_3) ?>"
+                    alt="<?= esc_attr(get_post_meta($image_3, '_wp_attachment_image_alt', true)) ?>"
+                >
+
+            <?php if ($project_id_3) : ?>
+                </a>
+            <?php endif; ?>
+
+            <div class="somework-subline">
+                <?= wp_kses_post(wpautop($subline_3)) ?>
+            </div>
+
+        </div>
 
     <?php endif; ?>
-
-    <div class="subline">
-        <?= wpautop($subline_3) ?>
-    </div>
 
 </section>
