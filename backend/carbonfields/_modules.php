@@ -109,6 +109,24 @@ Container::make('post_meta', 'Module')
         ->set_max(1)
         ->set_min(1)
 ])
+      
+        // CALL TO ACTION
+        ->add_fields('calltoaction', 'Call to Action', [
+            Field::make('text', 'text_above', 'Text oberhalb'),
+            Field::make('text', 'title', 'Titel')->set_required(),
+            Field::make('text', 'link_text', 'Verlinkungstext')->set_required(),
+
+            Field::make('association', 'link_page', 'Verlinkte Seite')
+                ->set_types([
+                    [
+                        'type' => 'post',
+                        'post_type' => 'page',
+                    ],
+                ])
+                ->set_max(1)
+                ->set_min(1)
+        ])
+
 
 
 
@@ -173,14 +191,24 @@ function render_modules(): void {
                 }
                 break;
 
+
             // -> PROJEKTÜBERBLICK (SOMEWORK)
             case 'somework':
                 break;
 
+
             // -> INFO LS
             case 'info_ls':
                 
+                break;  
+
+
+            // -> CALL TO ACTION
+            case 'calltoaction':
                 break;    
+
+
+                
 
             // todo: add data modifications for modules here
         }
