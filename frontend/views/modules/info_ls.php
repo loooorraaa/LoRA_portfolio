@@ -27,28 +27,33 @@ $link_page_id = $link_page['id'] ?? null;
     </h2>
 
 
-    <!-- BILD 1 -->
-    <?php if ($image_url_1) : ?>
+    <!-- BILDER -->
+    <div class="info-ls-images">
 
-        <img
-            class="info-ls-image-1"
-            src="<?= esc_url($image_url_1) ?>"
-            alt="<?= esc_attr(get_post_meta($image_1, '_wp_attachment_image_alt', true)) ?>"
-        >
+        <!-- BILD 1 -->
+        <?php if ($image_url_1) : ?>
 
-    <?php endif; ?>
+            <img
+                class="info-ls-image-1"
+                src="<?= esc_url($image_url_1) ?>"
+                alt="<?= esc_attr(get_post_meta($image_1, '_wp_attachment_image_alt', true)) ?>"
+            >
+
+        <?php endif; ?>
 
 
-    <!-- BILD 2 -->
-    <?php if ($image_url_2) : ?>
+        <!-- BILD 2 -->
+        <?php if ($image_url_2) : ?>
 
-        <img
-            class="info-ls-image-2"
-            src="<?= esc_url($image_url_2) ?>"
-            alt="<?= esc_attr(get_post_meta($image_2, '_wp_attachment_image_alt', true)) ?>"
-        >
+            <img
+                class="info-ls-image-2"
+                src="<?= esc_url($image_url_2) ?>"
+                alt="<?= esc_attr(get_post_meta($image_2, '_wp_attachment_image_alt', true)) ?>"
+            >
 
-    <?php endif; ?>
+        <?php endif; ?>
+
+    </div>
 
 
     <!-- BESCHREIBUNG -->
