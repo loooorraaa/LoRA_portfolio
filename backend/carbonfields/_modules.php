@@ -47,6 +47,21 @@ Container::make('post_meta', 'Module')
                 Field::make('image', 'image_2', 'Bild 2')->set_required(),
             ])
 
+            // -> PROJEKTÜBERISCHT (SOMEWORK)
+            ->add_fields('somework', 'Projektüberblick (somework)', [
+                Field::make('text', 'title', 'Titel')->set_required(),
+                Field::make('image', 'image_1', 'Bild 1')->set_required(),
+                Field::make('rich_text', 'subline_1', 'Untertitel 1')->set_required(),
+                Field::make('association', 'teaser_link_1', 'Projektmit Bildverknüpfen') ->set_types([
+        [
+            'type' => 'post',
+            'post_type' => 'project',
+        ],
+    ])
+    ->set_max(1),
+
+            ])
+
 
             // todo: add new modules here
             // -> SETTINGS
@@ -108,6 +123,11 @@ function render_modules(): void {
                     $module[$key] = get_media_by_id($module[$key], 'full');
                 }
                 break;
+
+           // -> PROJEKTÜBERBLICK (SOMEWORK)
+        case 'somework':
+               
+               break;   
 
 
             // todo: add data modifications for modules here as a new case
