@@ -1,3 +1,25 @@
+
+<?php
+$page_background_color = carbon_get_post_meta(
+    get_queried_object_id(),
+    'page_background_color'
+);
+
+if (!$page_background_color) {
+    $page_background_color = '#FFFDE6';
+}
+?>
+
+<style>
+    body {
+        background-color: <?php echo esc_attr($page_background_color); ?>;
+    }
+</style>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="<?php bloginfo('language') ?>">
 <head>

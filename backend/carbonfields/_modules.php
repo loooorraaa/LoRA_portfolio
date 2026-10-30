@@ -3,11 +3,24 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+
+
+
 // -> Konfiguration der verschiedenen Module
 Container::make('post_meta', 'Module')
     ->where('post_type', '=', 'page')
     ->add_fields([
+
+        // -> HINTERGRUNDFARBE DER SEITE
+        Field::make('color', 'page_background_color', 'Hintergrundfarbe')
+            ->set_default_value('#FFFDE6'),
+
+        // -> KONFIGURATION DER VERSCHIEDENEN MODULE
         Field::make('complex', 'modules', 'Module')
+
+
+
+
             // -> example
             ->add_fields('example', 'Beispiel', [
                 Field::make('text', 'title', 'Titel')->set_required(),
