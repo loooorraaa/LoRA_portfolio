@@ -10,16 +10,6 @@ if (!$page_background_color) {
 }
 ?>
 
-<style>
-    body {
-        background-color: <?php echo esc_attr($page_background_color); ?>;
-    }
-</style>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="<?php bloginfo('language') ?>">
 <head>
@@ -29,4 +19,5 @@ if (!$page_background_color) {
     <title><?php bloginfo('name') ?></title>
     <?php wp_head(); ?>
 </head>
-<body>
+
+<body style="background-color: <?php echo esc_attr($page_background_color); ?>;">
