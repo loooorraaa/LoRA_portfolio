@@ -140,12 +140,15 @@ Container::make('post_meta', 'Module')
                 ->set_min(1)
         ])
 
-        // KONTAKTFORMULAR
+       // KONTAKTFORMULAR
         ->add_fields('contactform', 'Kontaktformular', [
-            Field::make('text', 'title', 'Titel')->set_required(),
+            Field::make('text', 'title', 'Titel')->set_required(),  
             Field::make('image', 'image_1', 'Bild 1')->set_required(),
             Field::make('image', 'image_2', 'Bild 2')->set_required(),
-
+            Field::make('text', 'contact_form_shortcode', 'Kontaktformular Shortcode')
+                ->set_default_value('[contact-form-7 id="e499b9f" title="contact me"]')
+                ->set_required(),
+        ])
 
 
 
@@ -227,6 +230,11 @@ function render_modules(): void {
             case 'calltoaction':
                 break;    
 
+            // -> KONTAKTFORMULAR
+            case 'contactform':
+                $module['image_1'] = get_media_by_id($module['image_1'], 'full');
+                $module['image_2'] = get_media_by_id($module['image_2'], 'full');
+                break;
 
                 
 
