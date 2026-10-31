@@ -126,7 +126,7 @@ Container::make('post_meta', 'Module')
         // CALL TO ACTION
         ->add_fields('calltoaction', 'Call to Action', [
             Field::make('text', 'text_above', 'Text oberhalb'),
-            Field::make('text', 'title', 'Titel')->set_required(),
+            Field::make('rich_text', 'title', 'Titel')->set_required(),
             Field::make('text', 'link_text', 'Verlinkungstext')->set_required(),
 
             Field::make('association', 'link_page', 'Verlinkte Seite')

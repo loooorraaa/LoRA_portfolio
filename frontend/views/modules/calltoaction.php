@@ -26,7 +26,7 @@ $link_page_id = $link_page['id'] ?? null;
 
     <!-- TITEL -->
     <h2 class="calltoaction-title">
-        <?= esc_html($title) ?>
+       <?= wp_kses_post($title) ?>
     </h2>
 
 
