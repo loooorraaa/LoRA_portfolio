@@ -1,3 +1,4 @@
+
 <?php
 
 use Carbon_Fields\Container;
@@ -16,8 +17,7 @@ Container::make('post_meta', 'Projekt')
         Field::make('complex', 'project_video_playlist', 'Video-Wiedergabeliste')
             ->add_fields([
                 Field::make('file', 'video_file', 'Videodatei')
-                    ->set_type(['video'])
-                    ->set_value_type('url'),
+                    ->set_type(['video']),
             ])
             ->set_layout('tabbed-horizontal'),
 

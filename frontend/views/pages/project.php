@@ -164,7 +164,7 @@ $project_link = $projekt['project_link'] ?? '';
                 <button
                     type="button"
                     class="video-preview"
-                    data-video="<?= esc_url($video['video_file']) ?>"
+                    data-video="<?= esc_url(wp_get_attachment_url($video['video_file'])) ?>"
                     aria-label="Video abspielen"
                 >
 
@@ -174,7 +174,7 @@ $project_link = $projekt['project_link'] ?? '';
                         playsinline
                         preload="auto"
                     >
-                        <source src="<?= esc_url($video['video_file']) ?>">
+                        <source src="<?= esc_url(wp_get_attachment_url($video['video_file'])) ?>">
                     </video>
 
                     <span class="video-play-icon">▶</span>
