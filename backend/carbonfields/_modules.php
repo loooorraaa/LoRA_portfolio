@@ -140,6 +140,13 @@ Container::make('post_meta', 'Module')
                 ->set_min(1)
         ])
 
+        // KONTAKTFORMULAR
+        ->add_fields('contactform', 'Kontaktformular', [
+            Field::make('text', 'title', 'Titel')->set_required(),
+            Field::make('image', 'image_1', 'Bild 1')->set_required(),
+            Field::make('image', 'image_2', 'Bild 2')->set_required(),
+
+
 
 
 
