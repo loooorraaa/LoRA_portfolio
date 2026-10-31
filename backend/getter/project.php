@@ -1,4 +1,3 @@
-
 <?php
 
 function get_project_by_id(int $id): array {
@@ -21,7 +20,13 @@ function get_project_by_id(int $id): array {
     // Galerie: mehrere Medien-IDs zurückgeben
     $project_gallery = carbon_get_post_meta($id, 'project_gallery');
 
+    // Projektbeschreibung
     $project_description = carbon_get_post_meta($id, 'project_description');
+
+    // Video-Wiedergabeliste
+    $project_video_playlist = carbon_get_post_meta($id, 'project_video_playlist');
+
+    // Projektlink
     $project_link = carbon_get_post_meta($id, 'project_link');
 
     // Daten zurückgeben
@@ -33,27 +38,7 @@ function get_project_by_id(int $id): array {
         'project_image3' => $project_image3,
         'project_gallery' => $project_gallery,
         'project_description' => $project_description,
+        'project_video_playlist' => $project_video_playlist,
         'project_link' => $project_link,
     ];
 }
-
-
-
-   
-    /*js_log($titel);
-    js_log($hero_image);
-    js_log($project_image1);
-    js_log($project_image2);
-    js_log($project_image3);
-    js_log($project_gallery_ids);
-    js_log($project_description);
-    js_log($project_link);
-
-    return $hero_image;
-}
-
-
-
-
-    //js_log("infos projekt zurückgeben mit id: " . $id);
-    // Implementation for fetching project data*/
