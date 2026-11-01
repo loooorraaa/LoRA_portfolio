@@ -1231,16 +1231,17 @@
 }
 
 
+
+
 /* UNTERTITEL */
 
 .somework-subline {
     font-family: 'Inter Tight', sans-serif;
     font-size: 13px;
-    font-weight: 500;
     line-height: 1.3;
 
     color: #000000;
-    text-transform: uppercase;
+    text-transform: none;
 
     white-space: nowrap;
 }
@@ -1249,21 +1250,17 @@
     margin: 0;
 }
 
+
+
+
 /* UNTERTITEL – FEINAUSRICHTUNG */
 
 .somework-subline {
     transform: translateY(3px);
 }
 
-/* LINKS */
 
-.somework-item a {
-    display: block;
-    line-height: 0;
-}
-
-
-/* BILDER HOVER – SCHWARZ / WEISS */
+/* BILDER – HOVER SCHWARZ / WEISS */
 
 .somework-item img {
     filter: grayscale(0%);
@@ -1273,6 +1270,16 @@
 .somework-item a:hover img {
     filter: grayscale(100%);
 }
+
+
+/* BILDER – VERLINKUNG */
+
+.somework-item a {
+    display: block;
+    line-height: 0;
+    cursor: pointer;
+}
+
 
 
 
