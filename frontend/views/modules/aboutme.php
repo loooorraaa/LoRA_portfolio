@@ -31,7 +31,7 @@ $description = $data['description'] ?? '';
 
     <!-- BESCHREIBUNG -->
     <div class="aboutme-description">
-        <?= wp_kses_post($description) ?>
+        <?= wp_kses_post(wpautop($description)) ?>
     </div>
 
 </section>
