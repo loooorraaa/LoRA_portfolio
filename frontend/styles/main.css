@@ -1156,7 +1156,7 @@
     margin: 0;
 
     font-family: 'Inter Tight', sans-serif;
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 500;
     line-height: 1.1;
 
@@ -1304,7 +1304,7 @@
     margin: 0;
 
     font-family: 'Inter Tight', sans-serif;
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 500;
     line-height: 1.1;
 
@@ -1553,7 +1553,7 @@
     margin: 0;
 
     font-family: 'Inter Tight', sans-serif;
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 500;
     line-height: 1.2;
 
@@ -1575,6 +1575,7 @@
 }
 
 
+
 /* FORMULAR FELDER */
 
 .contactform-form form {
@@ -1594,7 +1595,7 @@
 
     font-family: 'Inter Tight', sans-serif;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
     color: #000000;
 }
 
@@ -1616,7 +1617,7 @@
     box-sizing: border-box;
 
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1.5px solid #000000;
     border-radius: 0;
 
     outline: none;
@@ -1624,6 +1625,7 @@
 
     font-family: 'Inter Tight', sans-serif;
     font-size: 16px;
+    font-weight: 700;
     color: #000000;
 }
 
@@ -1635,6 +1637,7 @@
     min-height: 43px;
     resize: vertical;
 }
+
 
 
 /* FOKUS */
@@ -1664,10 +1667,13 @@
     cursor: pointer;
 }
 
-.contactform-form input[type="submit"]:hover {
-    opacity: 0.6;
-}
 
+/* ABSCHICKEN HOVER */
+
+.contactform-form input[type="submit"]:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
 
 /* BILD 1 */
 
@@ -1688,8 +1694,8 @@
 .contactform-image-2 {
     position: absolute;
 
-    width: 42%;
-    height: 209px;
+    width: 12%;
+    height: 260px;
 
     right: 6.7%;
     top: 57%;
@@ -1716,7 +1722,7 @@
         grid-column: 1;
         grid-row: 1;
 
-        font-size: 45px;
+        font-size: 38px;
     }
 
     .contactform-form {
