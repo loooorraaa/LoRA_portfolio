@@ -122,7 +122,15 @@ Container::make('post_meta', 'Module')
         ->set_max(1)
         ->set_min(1)
 ])
-      
+
+        // ABOUT ME
+        ->add_fields('aboutme', 'About Me', [
+            Field::make('text', 'title', 'Titel')->set_required(),  
+            Field::make('image', 'image_1', 'Bild 1')->set_required(),
+            Field::make('rich_text', 'description', 'Beschreibung')->set_required(),
+        ])
+
+
         // CALL TO ACTION
         ->add_fields('calltoaction', 'Call to Action', [
             Field::make('text', 'text_above', 'Text oberhalb'),
@@ -224,6 +232,11 @@ function render_modules(): void {
             case 'info_ls':
                 
                 break;  
+
+            // -> ABOUT ME
+            case 'aboutme':
+                $module['image_1'] = get_media_by_id($module['image_1'], 'full');
+                break;      
 
 
             // -> CALL TO ACTION
