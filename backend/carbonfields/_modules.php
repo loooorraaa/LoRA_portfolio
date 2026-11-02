@@ -166,6 +166,16 @@ Container::make('post_meta', 'Module')
                 ->set_required(),
         ])
 
+         // -> PROJEKTSEITENAUSWAHL
+            ->add_fields('project_page_selection', 'Projektseitenauswahl', [
+                Field::make('select', 'selected_category', 'Projektkategorie')
+                    ->add_options([
+                        'filme' => 'Filme',
+                        'fotografie' => 'Fotografie',
+                        'multimedial' => 'Multimedial',
+                    ])
+                    ->set_required(),
+            ])
 
 
 
@@ -261,6 +271,11 @@ function render_modules(): void {
                 $module['image_1'] = get_media_by_id($module['image_1'], 'full');
                 $module['image_2'] = get_media_by_id($module['image_2'], 'full');
                 break;
+
+                
+             // -> PROJEKTSEITENAUSWAHL
+            case 'project_page_selection':
+                break;    
 
                 
 
