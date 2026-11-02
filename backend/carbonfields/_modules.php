@@ -69,6 +69,7 @@ Container::make('post_meta', 'Module')
             ])
 
 
+            
             // -> PROJEKTÜBERBLICK (SOMEWORK)
             ->add_fields('somework', 'Projektüberblick (somework)', [
                 Field::make('text', 'title', 'Titel')->set_required(),
@@ -76,11 +77,11 @@ Container::make('post_meta', 'Module')
                 // BILD 1
                 Field::make('image', 'image_1', 'Bild 1')->set_required(),
                 Field::make('rich_text', 'subline_1', 'Untertitel 1')->set_required(),
-                Field::make('association', 'teaser_link_1', 'Projekt mit Bild 1 verknüpfen')
+                Field::make('association', 'teaser_link_1', 'Mit Filmseite verknüpfen')
                     ->set_types([
                         [
                             'type' => 'post',
-                            'post_type' => 'project',
+                            'post_type' => 'page',
                         ],
                     ])
                     ->set_max(1),
@@ -88,11 +89,11 @@ Container::make('post_meta', 'Module')
                 // BILD 2
                 Field::make('image', 'image_2', 'Bild 2')->set_required(),
                 Field::make('rich_text', 'subline_2', 'Untertitel 2')->set_required(),
-                Field::make('association', 'teaser_link_2', 'Projekt mit Bild 2 verknüpfen')
+                Field::make('association', 'teaser_link_2', 'Mit Filmseite verknüpfen')
                     ->set_types([
                         [
                             'type' => 'post',
-                            'post_type' => 'project',
+                            'post_type' => 'page',
                         ],
                     ])
                     ->set_max(1),
@@ -100,15 +101,16 @@ Container::make('post_meta', 'Module')
                 // BILD 3
                 Field::make('image', 'image_3', 'Bild 3')->set_required(),
                 Field::make('rich_text', 'subline_3', 'Untertitel 3')->set_required(),
-                Field::make('association', 'teaser_link_3', 'Projekt mit Bild 3 verknüpfen')
+                Field::make('association', 'teaser_link_3', 'Mit Filmseite verknüpfen')
                     ->set_types([
                         [
                             'type' => 'post',
-                            'post_type' => 'project',
+                            'post_type' => 'page',
                         ],
                     ])
                     ->set_max(1),
             ])
+
 
 
             // -> INFO LS
