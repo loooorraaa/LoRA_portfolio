@@ -923,7 +923,15 @@
     object-fit: cover;
 }
 
+/* MOBILE: LOGOS AUF GLEICHE HÖHE BRINGEN */
 
+@media (max-width: 600px) {
+
+    [data-module="hero_start"] .logo {
+        top: -68.5px;
+    }
+
+}
 
 
 /* HERO WORKSEITE */
