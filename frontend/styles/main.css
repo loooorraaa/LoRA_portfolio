@@ -1955,6 +1955,12 @@
 }
 
 
+/* GRID FÜR GESPIEGELTE PROJEKTE */
+
+[data-module="project_page_selection"] .project-selection-item:nth-child(even) {
+    grid-template-columns: 0.92fr 0.8fr;
+}
+
 /* TEXTBLOCK RECHTS */
 
 [data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-info {
