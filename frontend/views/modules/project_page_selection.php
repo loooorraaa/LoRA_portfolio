@@ -11,8 +11,8 @@ $selected_category = $data['selected_category'] ?? '';
 $projects = get_posts([
     'post_type' => 'project',
     'posts_per_page' => -1,
-    'orderby' => 'menu_order',
-    'order' => 'ASC',
+    'orderby' => 'date',
+    'order' => 'DESC',
     'tax_query' => [
         [
             'taxonomy' => 'project_category',
