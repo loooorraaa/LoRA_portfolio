@@ -2049,7 +2049,10 @@
 
 }
 
+
+
 /* FOTO-GALERIE */
+
 
 /* GALERIE-ÜBERSICHT */
 
@@ -2092,42 +2095,51 @@
 }
 
 
-/* BILDRASTER */
+/* DYNAMISCHES BILDRASTER */
 
 .photo-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 45px;
+    column-count: 3;
+    column-gap: 55px;
 
     width: 100%;
-    align-items: center;
 }
 
 
 /* EINZELNE BILDER */
 
 .photo-gallery-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
 
     width: 100%;
-    height: 250px;
+    height: auto;
 
+    margin: 0 0 55px;
     padding: 0;
+
     border: none;
     background: none;
 
+    break-inside: avoid;
     cursor: pointer;
 }
 
-.photo-gallery-item img {
-    display: block;
+/* BILDER IN ORIGINALEN PROPORTIONEN */
 
-    max-width: 100%;
-    max-height: 100%;
+.photo-gallery-popup .photo-gallery-item img {
+    position: static !important;
 
-    object-fit: contain;
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+    max-height: none !important;
+
+    object-fit: unset !important;
+    object-position: center !important;
+
+    transform: none !important;
 
     transition: opacity 0.3s ease;
 }
@@ -2159,12 +2171,18 @@
 /* GROSSES BILD */
 
 .photo-lightbox-image {
+    position: static !important;
+
     display: block;
 
-    max-width: 82%;
-    max-height: 85vh;
+    width: auto !important;
+    height: auto !important;
 
-    object-fit: contain;
+    max-width: 82vw !important;
+    max-height: 85vh !important;
+
+    object-fit: contain !important;
+    transform: none !important;
 }
 
 
@@ -2217,6 +2235,22 @@
 }
 
 
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .photo-gallery-grid {
+        column-count: 2;
+        column-gap: 35px;
+    }
+
+    .photo-gallery-item {
+        margin-bottom: 35px;
+    }
+
+}
+
+
 /* MOBILE */
 
 @media (max-width: 600px) {
@@ -2226,17 +2260,17 @@
     }
 
     .photo-gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+        column-count: 2;
+        column-gap: 20px;
     }
 
     .photo-gallery-item {
-        height: 160px;
+        margin-bottom: 25px;
     }
 
     .photo-lightbox-image {
-        max-width: 88%;
-        max-height: 75vh;
+        max-width: 88vw !important;
+        max-height: 75vh !important;
     }
 
     .photo-lightbox-prev {
@@ -2252,6 +2286,11 @@
 
 
 
+
+
+
+    
+}
 /* RESPONSIVE */
 
 @media (max-width: 768px) {

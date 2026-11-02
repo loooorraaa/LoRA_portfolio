@@ -593,6 +593,7 @@ if (!empty($project_ids) && !empty($selected_category)) {
 </script>
 
 
+
 <!-- JAVASCRIPT: FOTO-GALERIE -->
 
 <script>
@@ -618,6 +619,8 @@ if (!empty($project_ids) && !empty($selected_category)) {
         const images = Array.from(
             gallery.querySelectorAll('.photo-gallery-item img')
         );
+
+        if (images.length === 0) return;
 
         let currentIndex = 0;
 
@@ -711,7 +714,11 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
             item.addEventListener('click', function () {
 
-                openImage(parseInt(this.dataset.index, 10));
+                const index = parseInt(this.dataset.index, 10);
+
+                if (!Number.isNaN(index) && index >= 0 && index < images.length) {
+                    openImage(index);
+                }
 
             });
 
@@ -720,17 +727,25 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
         // SCHLIESSEN UND NAVIGATION
 
-        galleryClose.addEventListener('click', closeGallery);
+        if (galleryClose) {
+            galleryClose.addEventListener('click', closeGallery);
+        }
 
-        lightboxClose.addEventListener('click', closeImage);
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeImage);
+        }
 
-        prevButton.addEventListener('click', function () {
-            changeImage(-1);
-        });
+        if (prevButton) {
+            prevButton.addEventListener('click', function () {
+                changeImage(-1);
+            });
+        }
 
-        nextButton.addEventListener('click', function () {
-            changeImage(1);
-        });
+        if (nextButton) {
+            nextButton.addEventListener('click', function () {
+                changeImage(1);
+            });
+        }
 
 
         // KLICK AUSSERHALB
