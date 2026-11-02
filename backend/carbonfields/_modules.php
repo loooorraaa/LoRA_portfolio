@@ -61,6 +61,14 @@ Container::make('post_meta', 'Module')
                 Field::make('image', 'image_2', 'Bild 2')->set_required(),
             ])
 
+            // HERO PROJEKTSEITEN (FILM, FOTO, MULTIMEDIA)
+            ->add_fields('hero_project', 'Hero Projektseiten', [
+                Field::make('image', 'logo', 'Logo')->set_required(),
+                Field::make('text', 'titel', 'Titel')->set_required(),
+                ])
+
+
+
             // -> PROJEKTÜBERBLICK (SOMEWORK)
             ->add_fields('somework', 'Projektüberblick (somework)', [
                 Field::make('text', 'title', 'Titel')->set_required(),
@@ -220,6 +228,11 @@ function render_modules(): void {
                     $key = 'image_' . $i;
                     $module[$key] = get_media_by_id($module[$key], 'full');
                 }
+                break;
+
+            // -> HERO PROJEKTSEITEN (FILM, FOTO, MULTIMEDIA)
+            case 'hero_project':
+                $module['logo'] = get_media_by_id($module['logo'], 'full');
                 break;
 
 
