@@ -1929,6 +1929,7 @@
 
 
 
+
 /* PROJEKTSEITENAUSWAHL */
 
 
@@ -1943,13 +1944,13 @@
 /* ABSTAND ZWISCHEN DEN PROJEKTEN */
 
 [data-module="project_page_selection"] .project-selection-item {
-    margin-bottom: 0;
+    margin-bottom: 120px;
 }
 
 
 /* JEDES ZWEITE PROJEKT SPIEGELN */
 
-[data-module="project_selection"] .project-selection-item:nth-child(even) {
+[data-module="project_page_selection"] .project-selection-item:nth-child(even) {
     padding: 80px 18% 100px 8%;
 }
 
@@ -1969,6 +1970,28 @@
 
 [data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-description {
     text-align: left;
+}
+
+
+/* HERO-BILDER: EINHEITLICHE GRÖSSE */
+
+[data-module="project_page_selection"] .hero-image-link,
+[data-module="project_page_selection"] .hero-image-button,
+[data-module="project_page_selection"] .project-visuals > .hero-image {
+    width: 100%;
+    aspect-ratio: 1.76 / 1;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* BILDER IM HERO-BEREICH */
+
+[data-module="project_page_selection"] .hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1.76 / 1;
+    object-fit: cover;
 }
 
 
