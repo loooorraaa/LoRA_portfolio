@@ -91,7 +91,16 @@ if (!empty($project_ids) && !empty($selected_category)) {
                     $image = get_media_by_id(id: (int) $image_id);
 
                     if (!empty($image['src'])) {
+
+                        $image['id'] = (int) $image_id;
+
+                        $image['full_src'] = wp_get_attachment_image_url(
+                            (int) $image_id,
+                            'full'
+                        );
+
                         $gallery_images[] = $image;
+
                     }
 
                 }
@@ -285,6 +294,7 @@ if (!empty($project_ids) && !empty($selected_category)) {
                             >
                                 <img
                                     src="<?= esc_url($image['src']) ?>"
+                                    data-full="<?= esc_url($image['full_src']) ?>"
                                     alt="<?= esc_attr($image['alt'] ?? '') ?>"
                                 >
                             </button>
@@ -659,7 +669,7 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
             currentIndex = index;
 
-            lightboxImage.src = images[currentIndex].src;
+            lightboxImage.src = images[currentIndex].dataset.full || images[currentIndex].src;
             lightboxImage.alt = images[currentIndex].alt;
 
             lightbox.classList.add('is-open');
@@ -682,7 +692,7 @@ if (!empty($project_ids) && !empty($selected_category)) {
                 currentIndex = 0;
             }
 
-            lightboxImage.src = images[currentIndex].src;
+            lightboxImage.src = images[currentIndex].dataset.full || images[currentIndex].src;
             lightboxImage.alt = images[currentIndex].alt;
 
         }

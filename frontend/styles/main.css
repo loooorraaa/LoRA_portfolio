@@ -19,6 +19,7 @@
 
 
 
+
 /* HEADER */
 
 [data-layout="header"] {
@@ -1329,7 +1330,59 @@
     cursor: pointer;
 }
 
+/* RESPONSIVE */
 
+@media (max-width: 768px) {
+
+    [data-module="somework"] {
+        min-height: auto;
+        padding: 50px 7% 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 65px;
+        overflow: visible;
+    }
+
+    .somework-title {
+        position: static;
+        font-size: 34px;
+        margin-bottom: 15px;
+    }
+
+    .somework-item {
+        position: static;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .somework-item--1 img {
+        width: 65%;
+    }
+
+    .somework-item--2 {
+        align-items: flex-end;
+    }
+
+    .somework-item--2 img {
+        width: 90%;
+    }
+
+    .somework-item--2 .somework-subline {
+        align-self: flex-start;
+    }
+
+    .somework-item--3 img {
+        width: 65%;
+    }
+
+    .somework-subline {
+        font-size: 12px;
+        white-space: normal;
+    }
+
+}
 
 
 
@@ -2178,13 +2231,12 @@
     width: auto !important;
     height: auto !important;
 
-    max-width: 82vw !important;
-    max-height: 85vh !important;
+    max-width: 70vw !important;
+    max-height: 75vh !important;
 
     object-fit: contain !important;
     transform: none !important;
 }
-
 
 /* SCHLIESSEN UND PFEILE */
 
@@ -2290,60 +2342,8 @@
 
 
     
-}
-/* RESPONSIVE */
 
-@media (max-width: 768px) {
 
-    [data-module="somework"] {
-        min-height: auto;
-        padding: 50px 7% 80px;
-        display: flex;
-        flex-direction: column;
-        gap: 65px;
-        overflow: visible;
-    }
-
-    .somework-title {
-        position: static;
-        font-size: 34px;
-        margin-bottom: 15px;
-    }
-
-    .somework-item {
-        position: static;
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .somework-item--1 img {
-        width: 65%;
-    }
-
-    .somework-item--2 {
-        align-items: flex-end;
-    }
-
-    .somework-item--2 img {
-        width: 90%;
-    }
-
-    .somework-item--2 .somework-subline {
-        align-self: flex-start;
-    }
-
-    .somework-item--3 img {
-        width: 65%;
-    }
-
-    .somework-subline {
-        font-size: 12px;
-        white-space: normal;
-    }
-
-}
 
 
 
