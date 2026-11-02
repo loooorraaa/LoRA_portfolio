@@ -10,6 +10,6 @@ js_log($data);
         <img class="logo" src="<?= $data['logo']['src'] ?>" alt="<?= $data['logo']['alt'] ?>">
     </a>
 
-    <h1><?= esc_html($data['titel']) ?></h1>
+    <h1 class="title"><?= esc_html($data['titel']) ?></h1>
 
 </section>
