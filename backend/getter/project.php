@@ -42,3 +42,4 @@ function get_project_by_id(int $id): array {
         'project_link' => $project_link,
     ];
 }
+
