@@ -6,21 +6,48 @@ $data = $args['data'];
 $selected_category = $data['selected_category'] ?? '';
 
 
+// AUSGEWÄHLTE PROJEKTE IN DER BACKEND-REIHENFOLGE HOLEN
+
+$project_order = $data['project_order'] ?? [];
+
+$project_ids = [];
+
+if (is_array($project_order)) {
+
+    foreach ($project_order as $item) {
+
+        if (!empty($item['id'])) {
+            $project_ids[] = (int) $item['id'];
+        }
+
+    }
+
+}
+
+$project_ids = array_values(array_unique($project_ids));
+
+
 // PROJEKTE DER AUSGEWÄHLTEN KATEGORIE LADEN
 
-$projects = get_posts([
-    'post_type' => 'project',
-    'posts_per_page' => -1,
-    'orderby' => 'date',
-    'order' => 'DESC',
-    'tax_query' => [
-        [
-            'taxonomy' => 'project_category',
-            'field' => 'slug',
-            'terms' => $selected_category,
+$projects = [];
+
+if (!empty($project_ids) && !empty($selected_category)) {
+
+    $projects = get_posts([
+        'post_type' => 'project',
+        'posts_per_page' => -1,
+        'post__in' => $project_ids,
+        'orderby' => 'post__in',
+        'tax_query' => [
+            [
+                'taxonomy' => 'project_category',
+                'field' => 'slug',
+                'terms' => $selected_category,
+            ],
         ],
-    ],
-]);
+    ]);
+
+}
 
 ?>
 
@@ -272,7 +299,7 @@ $projects = get_posts([
 <script>
 (function () {
 
-    document.querySelectorAll('.project-selection-item').forEach(function (project) {
+    document.querySelectorAll('[data-module="project_page_selection"] .project-selection-item').forEach(function (project) {
 
         const popup = project.querySelector('.video-popup');
         const openButton = project.querySelector('.hero-image-button');
