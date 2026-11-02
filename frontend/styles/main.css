@@ -1929,6 +1929,100 @@
 
 
 
+/* PROJEKTSEITENAUSWAHL */
+
+
+/* CONTAINER */
+
+[data-module="project_page_selection"] {
+    width: 100%;
+    overflow: visible;
+}
+
+
+/* ABSTAND ZWISCHEN DEN PROJEKTEN */
+
+[data-module="project_page_selection"] .project-selection-item {
+    margin-bottom: 0;
+}
+
+
+/* JEDES ZWEITE PROJEKT SPIEGELN */
+
+[data-module="project_selection"] .project-selection-item:nth-child(even) {
+    padding: 80px 18% 100px 8%;
+}
+
+
+/* TEXTBLOCK RECHTS */
+
+[data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-info {
+    grid-column: 2;
+    grid-row: 1;
+
+    text-align: left;
+    align-items: flex-start;
+}
+
+
+/* BESCHREIBUNG LINKS AUSRICHTEN */
+
+[data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-description {
+    text-align: left;
+}
+
+
+/* HERO-BILD LINKS */
+
+[data-module="project_page_selection"] .project-selection-item:nth-child(even) .hero-image-link,
+[data-module="project_page_selection"] .project-selection-item:nth-child(even) .hero-image-button,
+[data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-visuals > .hero-image {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* DREI BILDER LINKS */
+
+[data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-thumbnails {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+/* MOBILE: ALLE PROJEKTE GLEICH ANORDNEN */
+
+@media (max-width: 600px) {
+
+    [data-module="project_page_selection"] .project-selection-item:nth-child(even) {
+        padding: 40px 6% 60px;
+    }
+
+    [data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-info {
+        grid-column: 1;
+        text-align: right;
+        align-items: flex-end;
+    }
+
+    [data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-description {
+        text-align: right;
+    }
+
+    [data-module="project_page_selection"] .project-selection-item:nth-child(even) .hero-image-link,
+    [data-module="project_page_selection"] .project-selection-item:nth-child(even) .hero-image-button,
+    [data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-visuals > .hero-image {
+        grid-column: 1;
+    }
+
+    [data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-thumbnails {
+        grid-column: 1;
+    }
+
+}
+
+
+
+
 
 
 /* RESPONSIVE */
