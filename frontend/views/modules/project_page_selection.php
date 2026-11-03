@@ -51,7 +51,10 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
 ?>
 
-<div data-module="project_page_selection">
+<div
+    data-module="project_page_selection"
+    data-category="<?= esc_attr($selected_category) ?>"
+>
 
     <?php foreach ($projects as $project) : ?>
 

@@ -2343,16 +2343,62 @@
 
 }
 
+/* FOTOGRAFIE: BILDER UND BESCHREIBUNG */
 
+/* BILDER ALS DIREKTE GRID-ELEMENTE BEHANDELN */
 
+[data-module="project_page_selection"][data-category="fotografie"] .project-visuals {
+    display: contents;
+}
 
+/* DREI THUMBNAILS ÜBER DEM HERO-BILD */
 
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .project-thumbnails {
+    grid-column: 2;
+    grid-row: 1;
 
+    align-items: end;
+}
 
-    
+/* HERO-BILD RECHTS */
 
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .hero-image-link,
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .hero-image-button,
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .project-visuals > .hero-image {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: stretch;
+}
 
+/* BESCHREIBUNG LINKS, UNTEN AM HERO-BILD */
 
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .project-info {
+    grid-column: 1;
+    grid-row: 2;
+
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* ABSTAND ZWISCHEN TEXT UND BILD */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item {
+    column-gap: 100px;
+}
+
+/* TITEL UND BESCHREIBUNG NACH UNTEN VERSCHIEBEN */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .project-info {
+    transform: translateY(25px);
+}
+
+/* FOTOGRAFIE: GESAMTEN INHALT NACH UNTEN VERSCHIEBEN */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item {
+    transform: translateY(120px);
+}
 
 
 
