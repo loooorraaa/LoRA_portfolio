@@ -2008,6 +2008,12 @@
     margin-bottom: 120px;
 }
 
+/* ERSTES FILMPROJEKT ETWAS NACH UNTEN VERSCHIEBEN */
+
+[data-module="project_page_selection"]:not([data-category="fotografie"]) .project-selection-item:first-child {
+    transform: translateY(-6.5px);
+}
+
 
 /* JEDES ZWEITE PROJEKT SPIEGELN */
 
@@ -2107,6 +2113,7 @@
     [data-module="project_page_selection"] .project-selection-item:nth-child(even) .project-thumbnails {
         grid-column: 1;
     }
+
 
 }
 
@@ -2482,6 +2489,9 @@
 [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:first-child {
     margin-top: 115px;
 }
+
+
+
 
 /* WEBSITEWEIT: Fett nur in Medium (500) darstellen */
 
