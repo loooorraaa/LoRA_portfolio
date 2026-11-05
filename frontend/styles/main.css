@@ -2011,7 +2011,7 @@
 /* ERSTES FILMPROJEKT ETWAS NACH UNTEN VERSCHIEBEN */
 
 [data-module="project_page_selection"]:not([data-category="fotografie"]) .project-selection-item:first-child {
-    transform: translateY(-6.5px);
+    transform: translateY(17px);
 }
 
 
@@ -2487,7 +2487,7 @@
 /* MEHR ABSTAND VOR DEM ERSTEN FOTOPROJEKT */
 
 [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:first-child {
-    margin-top: 115px;
+    margin-top: 140px;
 }
 
 
