@@ -2343,7 +2343,9 @@
 
 }
 
+
 /* FOTOGRAFIE: BILDER UND BESCHREIBUNG */
+
 
 /* BILDER ALS DIREKTE GRID-ELEMENTE BEHANDELN */
 
@@ -2351,16 +2353,31 @@
     display: contents;
 }
 
-/* DREI THUMBNAILS ÜBER DEM HERO-BILD */
+
+/* ABSTAND ZWISCHEN DEN PROJEKTEN WIE BEI FILM */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item {
+    margin-bottom: 120px;
+}
+
+
+/* GRUNDANORDNUNG FOTOGRAFIE */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item {
+    column-gap: 100px;
+}
+
+
+/* DREI THUMBNAILS OBEN RECHTS */
 
 [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .project-thumbnails {
     grid-column: 2;
     grid-row: 1;
-
     align-items: end;
 }
 
-/* HERO-BILD RECHTS */
+
+/* HERO-BILD UNTEN RECHTS */
 
 [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .hero-image-link,
 [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .hero-image-button,
@@ -2370,7 +2387,8 @@
     align-self: stretch;
 }
 
-/* BESCHREIBUNG LINKS, UNTEN AM HERO-BILD */
+
+/* TEXT LINKS UNTEN */
 
 [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .project-info {
     grid-column: 1;
@@ -2380,28 +2398,84 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
 
-/* ABSTAND ZWISCHEN TEXT UND BILD */
-
-[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item {
-    column-gap: 100px;
-}
-
-/* TITEL UND BESCHREIBUNG NACH UNTEN VERSCHIEBEN */
-
-[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item .project-info {
     transform: translateY(25px);
 }
 
-/* FOTOGRAFIE: GESAMTEN INHALT NACH UNTEN VERSCHIEBEN */
 
-[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item {
-    transform: translateY(120px);
+/* JEDES ZWEITE FOTOPROJEKT SPIEGELN */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) {
+    padding: 80px 18% 100px 8%;
+    grid-template-columns: 0.92fr 0.8fr;
 }
 
 
+/* TEXT RECHTS */
 
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .project-info {
+    grid-column: 2;
+    grid-row: 2;
+
+    text-align: left;
+    align-items: flex-start;
+}
+
+
+/* HERO-BILD LINKS */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .hero-image-link,
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .hero-image-button,
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .project-visuals > .hero-image {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+/* DREI THUMBNAILS OBEN LINKS */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .project-thumbnails {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* BESCHREIBUNG LINKS AUSRICHTEN */
+
+[data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .project-description {
+    text-align: left;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item {
+        margin-bottom: 80px;
+        transform: none;
+    }
+
+    [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) {
+        padding: 40px 6% 60px;
+        grid-template-columns: 1fr;
+    }
+
+    [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .project-info {
+        grid-column: 1;
+        grid-row: auto;
+        text-align: right;
+        align-items: flex-end;
+    }
+
+    [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .hero-image-link,
+    [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .hero-image-button,
+    [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .project-visuals > .hero-image,
+    [data-module="project_page_selection"][data-category="fotografie"] .project-selection-item:nth-child(even) .project-thumbnails {
+        grid-column: 1;
+    }
+
+}
 
 
 
