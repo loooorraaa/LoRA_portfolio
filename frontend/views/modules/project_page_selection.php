@@ -65,7 +65,6 @@ if (!empty($project_ids) && !empty($selected_category)) {
         // VIDEO-WIEDERGABELISTE
 
         $video_playlist = $projekt['project_video_playlist'] ?? [];
-
         $video_playlist = is_array($video_playlist) ? $video_playlist : [];
 
         $videos = array_filter($video_playlist, function ($video) {
@@ -73,6 +72,18 @@ if (!empty($project_ids) && !empty($selected_category)) {
         });
 
         $has_video_playlist = !empty($videos);
+
+
+        // AUDIO-WIEDERGABELISTE
+
+        $audio_playlist = $projekt['project_audio_playlist'] ?? [];
+        $audio_playlist = is_array($audio_playlist) ? $audio_playlist : [];
+
+        $audios = array_filter($audio_playlist, function ($audio) {
+            return !empty($audio['audio_file']);
+        });
+
+        $has_audio_playlist = !empty($audios);
 
 
         // BILDERGALERIE
@@ -127,6 +138,7 @@ if (!empty($project_ids) && !empty($selected_category)) {
         $lightbox_id = 'video-lightbox-' . $project->ID;
         $video_id = 'lightbox-video-' . $project->ID;
         $photo_gallery_id = 'photo-gallery-' . $project->ID;
+        $audio_popup_id = 'audio-popup-' . $project->ID;
 
         ?>
 
@@ -162,10 +174,26 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
                         <button
                             type="button"
-                            class="hero-image-button"
+                            class="hero-image-button video-open"
                             aria-label="Videogalerie öffnen"
                             aria-haspopup="dialog"
                             aria-controls="<?= esc_attr($popup_id) ?>"
+                        >
+                            <img
+                                class="hero-image"
+                                src="<?= esc_url($projekt['hero_image']['src']) ?>"
+                                alt="<?= esc_attr($projekt['hero_image']['alt'] ?? '') ?>"
+                            >
+                        </button>
+
+                    <?php elseif ($has_audio_playlist) : ?>
+
+                        <button
+                            type="button"
+                            class="hero-image-button audio-open"
+                            aria-label="Audiogalerie öffnen"
+                            aria-haspopup="dialog"
+                            aria-controls="<?= esc_attr($audio_popup_id) ?>"
                         >
                             <img
                                 class="hero-image"
@@ -434,6 +462,64 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
             <?php endif; ?>
 
+
+            <!-- AUDIO POPUP -->
+
+            <?php if ($has_audio_playlist) : ?>
+
+                <div
+                    class="audio-popup"
+                    id="<?= esc_attr($audio_popup_id) ?>"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Audio-Wiedergabeliste"
+                    aria-hidden="true"
+                >
+
+                    <button
+                        type="button"
+                        class="audio-popup-close"
+                        aria-label="Audio-Popup schliessen"
+                    >
+                        ×
+                    </button>
+
+                    <div class="audio-popup-content">
+
+                        <h2><?= esc_html($projekt['titel']) ?></h2>
+
+                        <?php foreach ($audios as $index => $audio) : ?>
+
+                            <?php
+                            $audio_url = wp_get_attachment_url($audio['audio_file']);
+                            $audio_title = get_the_title($audio['audio_file']);
+                            ?>
+
+                            <?php if ($audio_url) : ?>
+
+                                <div class="audio-track">
+
+                                    <p class="audio-track-title">
+                                        <?= esc_html($audio_title ?: 'Audio ' . ($index + 1)) ?>
+                                    </p>
+
+                                    <audio controls preload="none">
+                                        <source src="<?= esc_url($audio_url) ?>">
+                                        Dein Browser unterstützt dieses Audioformat nicht.
+                                    </audio>
+
+                                </div>
+
+                            <?php endif; ?>
+
+                        <?php endforeach; ?>
+
+                    </div>
+
+                </div>
+
+            <?php endif; ?>
+
         </section>
 
     <?php endforeach; ?>
@@ -449,13 +535,12 @@ if (!empty($project_ids) && !empty($selected_category)) {
     document.querySelectorAll('[data-module="project_page_selection"] .project-selection-item').forEach(function (project) {
 
         const popup = project.querySelector('.video-popup');
-        const openButton = project.querySelector('.hero-image-button');
+        const openButton = project.querySelector('.video-open');
         const closeButton = project.querySelector('.video-popup-close');
 
         const lightbox = project.querySelector('.video-lightbox');
         const lightboxVideo = project.querySelector('.video-lightbox video');
         const lightboxClose = project.querySelector('.video-lightbox-close');
-
 
         if (!popup || !lightbox || !lightboxVideo) return;
 
@@ -474,9 +559,7 @@ if (!empty($project_ids) && !empty($selected_category)) {
             }, { once: true });
 
             video.addEventListener('seeked', function () {
-
                 video.pause();
-
             });
 
         });
@@ -603,7 +686,6 @@ if (!empty($project_ids) && !empty($selected_category)) {
 </script>
 
 
-
 <!-- JAVASCRIPT: FOTO-GALERIE -->
 
 <script>
@@ -621,7 +703,6 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
         const prevButton = project.querySelector('.photo-lightbox-prev');
         const nextButton = project.querySelector('.photo-lightbox-next');
-
 
         if (!gallery || !lightbox || !lightboxImage) return;
 
@@ -801,6 +882,95 @@ if (!empty($project_ids) && !empty($selected_category)) {
                     closeGallery();
                 }
 
+            }
+
+        });
+
+    });
+
+})();
+</script>
+
+
+<!-- JAVASCRIPT: AUDIO POPUPS -->
+
+<script>
+(function () {
+
+    document.querySelectorAll('[data-module="project_page_selection"] .project-selection-item').forEach(function (project) {
+
+        const popup = project.querySelector('.audio-popup');
+        const openButton = project.querySelector('.audio-open');
+        const closeButton = project.querySelector('.audio-popup-close');
+
+        if (!popup || !openButton) return;
+
+
+        // AUDIO-POPUP ÖFFNEN
+
+        function openAudioPopup() {
+
+            popup.classList.add('is-open');
+            popup.setAttribute('aria-hidden', 'false');
+
+            document.body.style.overflow = 'hidden';
+
+        }
+
+
+        // AUDIO-POPUP SCHLIESSEN
+
+        function closeAudioPopup() {
+
+            popup.querySelectorAll('audio').forEach(function (audio) {
+
+                audio.pause();
+                audio.currentTime = 0;
+
+            });
+
+            popup.classList.remove('is-open');
+            popup.setAttribute('aria-hidden', 'true');
+
+            document.body.style.overflow = '';
+
+            openButton.focus();
+
+        }
+
+
+        // HERO-BILD KLICKEN
+
+        openButton.addEventListener('click', openAudioPopup);
+
+
+        // SCHLIESSEN-BUTTON
+
+        if (closeButton) {
+            closeButton.addEventListener('click', closeAudioPopup);
+        }
+
+
+        // KLICK AUSSERHALB DES POPUPS
+
+        popup.addEventListener('click', function (event) {
+
+            if (event.target === popup) {
+                closeAudioPopup();
+            }
+
+        });
+
+
+        // ESCAPE-TASTE
+
+        document.addEventListener('keydown', function (event) {
+
+            if (
+                event.key === 'Escape' &&
+                popup.classList.contains('is-open')
+            ) {
+                closeAudioPopup();
             }
 
         });

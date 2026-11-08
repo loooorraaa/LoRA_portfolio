@@ -1,6 +1,8 @@
+
 <?php
 
 function get_project_by_id(int $id): array {
+
     // Daten aus dem Backend holen
 
     $titel = get_the_title($id);
@@ -17,7 +19,7 @@ function get_project_by_id(int $id): array {
     $project_image3_id = carbon_get_post_meta($id, 'project_image3');
     $project_image3 = get_media_by_id(id: $project_image3_id);
 
-    // Galerie: mehrere Medien-IDs zurückgeben
+    // Galerie
     $project_gallery = carbon_get_post_meta($id, 'project_gallery');
 
     // Projektbeschreibung
@@ -25,6 +27,9 @@ function get_project_by_id(int $id): array {
 
     // Video-Wiedergabeliste
     $project_video_playlist = carbon_get_post_meta($id, 'project_video_playlist');
+
+    // Audio-Wiedergabeliste
+    $project_audio_playlist = carbon_get_post_meta($id, 'project_audio_playlist');
 
     // Projektlink
     $project_link = carbon_get_post_meta($id, 'project_link');
@@ -39,7 +44,7 @@ function get_project_by_id(int $id): array {
         'project_gallery' => $project_gallery,
         'project_description' => $project_description,
         'project_video_playlist' => $project_video_playlist,
+        'project_audio_playlist' => $project_audio_playlist,
         'project_link' => $project_link,
     ];
 }
-
