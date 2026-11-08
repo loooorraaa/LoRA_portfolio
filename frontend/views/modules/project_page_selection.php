@@ -112,10 +112,7 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
         }
 
-        $has_image_gallery = (
-            $selected_category === 'fotografie'
-            && !empty($gallery_images)
-        );
+        $has_image_gallery = !empty($gallery_images);
 
 
         // PROJEKTLINK
