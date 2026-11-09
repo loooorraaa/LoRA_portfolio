@@ -886,7 +886,7 @@
 [data-module="hero_start"] .image1 {
     position: absolute;
     left: 11.1%;
-    bottom: 25%;
+    bottom: 17%;
     width: 12%;
     height: 30%;
     object-fit: cover;
@@ -896,7 +896,7 @@
 [data-module="hero_start"] .image2 {
     position: absolute;
     left: 26.6%;
-    bottom: 25%;
+    bottom: 17%;
     width: 17.5%;
     height: 26.5%;
     object-fit: cover;
@@ -906,7 +906,7 @@
 [data-module="hero_start"] .image3 {
     position: absolute;
     left: 47.6%;
-    bottom: 25%;
+    bottom: 17%;
     width: 10.5%;
     height: 22.5%;
     object-fit: cover;
@@ -916,7 +916,7 @@
 [data-module="hero_start"] .image4 {
     position: absolute;
     left: 61.6%;
-    bottom: 25%;
+    bottom: 17%;
     width: 13.3%;
     height: 40%;
     object-fit: cover;
@@ -926,7 +926,7 @@
 [data-module="hero_start"] .image5 {
     position: absolute;
     left: 78.4%;
-    bottom: 25%;
+    bottom: 17%;
     width: 10.5%;
     height: 27.5%;
     object-fit: cover;
@@ -1217,7 +1217,7 @@
 
 .somework-title {
     position: absolute;
-    top: 4.5%;
+    top: 8.5%;
     left: 7%;
 
     margin: 0;
@@ -1254,7 +1254,7 @@
 /* BILD 1 */
 
 .somework-item--1 {
-    top: 20.5%;
+    top: 28.5%;
     left: 7%;
     align-items: flex-end;
 }
@@ -1268,7 +1268,7 @@
 /* BILD 2 */
 
 .somework-item--2 {
-    top: 40%;
+    top: 48%;
     right: 6.4%;
 
     flex-direction: row;
@@ -1286,7 +1286,7 @@
 /* BILD 3 */
 
 .somework-item--3 {
-    top: 65%;
+    top: 73%;
     left: 14.9%;
     align-items: flex-end;
     gap: 58px;
@@ -1600,7 +1600,7 @@
     min-height: 100vh;
     box-sizing: border-box;
 
-    padding: 60px 7% 100px;
+    padding: calc(60px + 4vh) 7% 100px;
     column-gap: 0%;
     row-gap: 100px;
 
@@ -1616,7 +1616,7 @@
 
     justify-self: end;
 
-    margin: 0;
+    margin-top: 12px;
 
     font-family: 'Inter Tight', sans-serif;
     font-size: 38px;
@@ -1660,6 +1660,8 @@
     object-fit: cover;
     justify-self: end;
     align-self: end;
+
+    margin-top: 4vh;
 
     transition: filter 0.4s ease;
 }
