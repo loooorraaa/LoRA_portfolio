@@ -138,6 +138,8 @@ Container::make('post_meta', 'Module')
                 Field::make('text', 'title', 'Titel')->set_required(),
                 Field::make('image', 'image_1', 'Bild 1')->set_required(),
                 Field::make('rich_text', 'description', 'Beschreibung')->set_required(),
+                 Field::make('file', 'video', 'Video')
+                   ->set_type('video'),
             ])
 
 
@@ -277,8 +279,12 @@ function render_modules(): void {
 
             // -> ABOUT ME
             case 'aboutme':
-                $module['image_1'] = get_media_by_id($module['image_1'], 'full');
-                break;
+                 $module['image_1'] = get_media_by_id($module['image_1'], 'full');
+
+                 $module['video'] = !empty($module['video'])
+                ? wp_get_attachment_url($module['video'])
+                 : '';
+                 break;
 
 
             // -> CALL TO ACTION

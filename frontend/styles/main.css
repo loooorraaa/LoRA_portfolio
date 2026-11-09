@@ -1577,6 +1577,7 @@
 }
 
 
+
 /* ABOUT ME */
 
 [data-module="aboutme"] {
@@ -1641,9 +1642,6 @@
 /* BILD */
 
 .aboutme-image {
-    grid-column: 2;
-    grid-row: 2;
-
     display: block;
 
     width: 85%;
@@ -1653,6 +1651,105 @@
     object-fit: cover;
     justify-self: end;
     align-self: end;
+
+    transition: filter 0.4s ease;
+}
+
+
+/* VIDEO BUTTON */
+
+[data-module="aboutme"] .aboutme-video-trigger {
+    grid-column: 2;
+    grid-row: 2;
+
+    position: relative;
+
+    display: block;
+    width: 100%;
+    height: auto;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    justify-self: end;
+    align-self: end;
+}
+
+
+/* BILD INNERHALB DES BUTTONS */
+
+[data-module="aboutme"] .aboutme-video-trigger .aboutme-image {
+    width: 85%;
+    margin-left: auto;
+}
+
+
+/* SCHWARZ-WEISS BEIM HOVER */
+
+[data-module="aboutme"] .aboutme-video-trigger:hover .aboutme-image {
+    filter: grayscale(100%);
+}
+
+
+/* VIDEO POPUP */
+
+.aboutme-video-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    background: #9BB2C6;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 8%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.aboutme-video-popup.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* VIDEO PLAYER */
+
+.aboutme-video-player {
+    display: block;
+
+    width: 100%;
+    max-width: 1100px;
+    max-height: 80vh;
+}
+
+
+/* SCHLIESSEN */
+
+.aboutme-video-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+
+    border: none;
+    background: none;
+
+    color: black;
+    font-size: 35px;
+    font-family: 'Inter Tight', sans-serif;
+
+    cursor: pointer;
 }
 
 
@@ -1682,6 +1779,16 @@
 
         width: 75%;
         margin-left: auto;
+    }
+
+    [data-module="aboutme"] .aboutme-video-trigger {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    [data-module="aboutme"] .aboutme-video-trigger .aboutme-image {
+        width: 75%;
     }
 
     .aboutme-description {
