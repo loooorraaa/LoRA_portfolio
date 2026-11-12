@@ -838,19 +838,16 @@
 
 
 
+
 /* HERO START */
 
 [data-module="hero_start"] {
     position: relative;
     width: 100%;
+    height: 580px;
     min-height: 100vh;
     box-sizing: border-box;
-
-    /* Hintergrundfarbe */
     background-color: transparent;
-    
-
-    /* Bezugspunkt für alle Bilder */
     overflow: hidden;
 }
 
@@ -859,7 +856,7 @@
 [data-module="hero_start"] .logo {
     position: absolute;
 
-    top: -8%;
+    top: -68.5px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -869,20 +866,7 @@
     object-fit: contain;
 }
 
-
-/* HERO START – BILDANORDNUNG */
-
-[data-module="hero_start"] {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-color: transparent;
-}
-
-
-/* BILD 1 – links, schmaler und höher */
+/* BILD 1 */
 [data-module="hero_start"] .image1 {
     position: absolute;
     left: 11.1%;
@@ -892,7 +876,7 @@
     object-fit: cover;
 }
 
-/* BILD 2 – links der Mitte */
+/* BILD 2 */
 [data-module="hero_start"] .image2 {
     position: absolute;
     left: 26.6%;
@@ -902,7 +886,7 @@
     object-fit: cover;
 }
 
-/* BILD 3 – Mitte, kleinstes Bild */
+/* BILD 3 */
 [data-module="hero_start"] .image3 {
     position: absolute;
     left: 47.6%;
@@ -912,7 +896,7 @@
     object-fit: cover;
 }
 
-/* BILD 4 – rechts der Mitte, grösstes Bild */
+/* BILD 4 */
 [data-module="hero_start"] .image4 {
     position: absolute;
     left: 61.6%;
@@ -922,7 +906,7 @@
     object-fit: cover;
 }
 
-/* BILD 5 – rechts */
+/* BILD 5 */
 [data-module="hero_start"] .image5 {
     position: absolute;
     left: 78.4%;
@@ -932,15 +916,8 @@
     object-fit: cover;
 }
 
-/* MOBILE: LOGOS AUF GLEICHE HÖHE BRINGEN */
 
-@media (max-width: 600px) {
 
-    [data-module="hero_start"] .logo {
-        top: -68.5px;
-    }
-
-}
 
 
 /* HERO WORKSEITE */
