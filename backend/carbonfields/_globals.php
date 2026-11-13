@@ -7,6 +7,7 @@ use Carbon_Fields\Field;
 Container::make('theme_options', 'Globales')
     ->add_fields([
         Field::make('text', 'instagram_url', 'Instagram-Link'),
+        Field::make('text', 'youtube_url', 'YouTube-Link'),
         Field::make('image', 'site_logo', 'Website-Logo'),
     ]);
 

@@ -69,12 +69,15 @@
 }
 
 
+
+
+
 /* FOOTER */
 
 [data-layout="footer"] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
+    align-items: start;
 
     width: 100%;
     min-height: 253px;
@@ -108,6 +111,7 @@
 /* FOOTER-LINKS */
 
 [data-layout="footer"] a {
+    display: block;
     color: #000;
     text-decoration: none;
     font-family: 'Source Code Pro', monospace;
@@ -123,10 +127,29 @@
 }
 
 
+/* FOOTER-RECHTLICHES */
+
 [data-layout="footer"] .footer-legal {
     justify-self: start;
     margin: 0;
     padding: 0;
+}
+
+
+/* FOOTER-SOCIAL-MEDIA */
+
+[data-layout="footer"] .footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    gap: 0;
+
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
 }
 
 
@@ -136,7 +159,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-self: center;
+    gap: 0;
 
     font-family: 'Source Code Pro', monospace;
     font-size: 11px;
@@ -156,6 +179,32 @@
 }
 
 
+/* FOOTER-YOUTUBE */
+
+[data-layout="footer"] .footer-youtube {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+[data-layout="footer"] .footer-youtube a {
+    color: #000;
+    text-decoration: none;
+}
+
+[data-layout="footer"] .footer-youtube a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+
 /* FOOTER-HAUPTNAVIGATION */
 
 [data-layout="footer"] .footer-main-nav {
@@ -166,10 +215,16 @@
 }
 
 [data-layout="footer"] .footer-main-nav .footer-list {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 0;
     margin: 0;
     padding: 0;
 }
+
+
+/* FOOTER-COPYRIGHT */
 
 [data-layout="footer"] .footer-copyright {
     margin-top: 0;
@@ -195,10 +250,20 @@
         padding: 40px 6%;
     }
 
-    [data-layout="footer"] .footer-instagram {
+    [data-layout="footer"] .footer-legal {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    [data-layout="footer"] .footer-socials {
         grid-column: 1;
         grid-row: 2;
         justify-self: start;
+        align-items: flex-start;
+    }
+
+    [data-layout="footer"] .footer-instagram,
+    [data-layout="footer"] .footer-youtube {
         align-items: flex-start;
     }
 
@@ -208,7 +273,6 @@
         justify-self: end;
     }
 }
-
 
 
 

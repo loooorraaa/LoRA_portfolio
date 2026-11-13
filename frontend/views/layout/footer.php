@@ -2,8 +2,6 @@
 <?php
 $menus = get_menu_by_slug('main');
 $legals = get_menu_by_slug('legals');
-
-$instagram = get_globals_instagram();
 ?>
 
 <!-- Google Font: Source Code Pro -->
@@ -14,7 +12,7 @@ $instagram = get_globals_instagram();
 
 <footer data-layout="footer">
 
-    <!-- Links: Datenschutz, Impressum und Copyright -->
+    <!-- Links: Rechtliche Navigation -->
     <div class="footer-legal">
         <nav aria-label="Rechtliche Informationen">
             <ul class="footer-list">
@@ -36,21 +34,38 @@ $instagram = get_globals_instagram();
         </nav>
     </div>
 
-  
 
-<!-- Mitte: Instagram -->
-<div class="footer-instagram">
-    <span>Instagram</span>
+    <!-- Mitte: Social Media -->
+    <div class="footer-socials">
 
-    <a
-        href="<?= esc_url(carbon_get_theme_option('instagram_url')) ?>"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        @lora.portfolio
-    </a>
+        <!-- Instagram -->
+        <div class="footer-instagram">
+            <span>Instagram</span>
 
-</div>
+            <a
+                href="<?= esc_url(carbon_get_theme_option('instagram_url')) ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @lora.portfolio
+            </a>
+        </div>
+
+        <!-- YouTube -->
+        <div class="footer-youtube">
+            <span>YouTube</span>
+
+            <a
+                href="<?= esc_url(carbon_get_theme_option('youtube_url')) ?>"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @orangemitchilli
+            </a>
+        </div>
+
+    </div>
+
 
     <!-- Rechts: Hauptnavigation -->
     <nav class="footer-main-nav" aria-label="Footer-Navigation">
@@ -69,8 +84,3 @@ $instagram = get_globals_instagram();
     </nav>
 
 </footer>
-
-
-
-
-
