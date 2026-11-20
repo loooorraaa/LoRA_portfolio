@@ -1,4 +1,3 @@
-
 <?php
 
 $data = $args['data'];
@@ -50,6 +49,42 @@ if (!empty($project_ids) && !empty($selected_category)) {
 }
 
 ?>
+
+<style>
+/* LADEANZEIGE FÜR VIDEOS */
+
+.video-loading-spinner {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.video-lightbox.is-loading .video-loading-spinner {
+    display: flex;
+}
+
+.video-loading-spinner span {
+    display: block;
+    width: 42px;
+    height: 42px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: video-loading-spin 0.8s linear infinite;
+}
+
+.video-lightbox-close {
+    z-index: 6;
+}
+
+@keyframes video-loading-spin {
+    to { transform: rotate(360deg); }
+}
+</style>
 
 <div
     data-module="project_page_selection"
@@ -418,7 +453,8 @@ if (!empty($project_ids) && !empty($selected_category)) {
                                         class="video-thumbnail"
                                         muted
                                         playsinline
-                                        preload="auto"
+                                        webkit-playsinline
+                                        preload="metadata"
                                     >
                                         <source src="<?= esc_url($video_url) ?>">
                                     </video>
@@ -452,10 +488,16 @@ if (!empty($project_ids) && !empty($selected_category)) {
                         ×
                     </button>
 
+                    <div class="video-loading-spinner" role="status" aria-label="Video wird geladen">
+                        <span></span>
+                    </div>
+
                     <video
                         id="<?= esc_attr($video_id) ?>"
                         controls
                         playsinline
+                        webkit-playsinline
+                        preload="none"
                     ></video>
 
                 </div>
@@ -545,22 +587,58 @@ if (!empty($project_ids) && !empty($selected_category)) {
         if (!popup || !lightbox || !lightboxVideo) return;
 
 
+        // LADEANZEIGE EIN- UND AUSBLENDEN
+
+        function showVideoLoader() {
+            lightbox.classList.add('is-loading');
+        }
+
+        function hideVideoLoader() {
+            lightbox.classList.remove('is-loading');
+        }
+
+        lightboxVideo.addEventListener('loadstart', showVideoLoader);
+        lightboxVideo.addEventListener('waiting', showVideoLoader);
+        lightboxVideo.addEventListener('stalled', showVideoLoader);
+        lightboxVideo.addEventListener('canplay', hideVideoLoader);
+        lightboxVideo.addEventListener('playing', hideVideoLoader);
+        lightboxVideo.addEventListener('error', hideVideoLoader);
+
+
         // VIDEO-VORSCHAU BEI SEKUNDE 2 ANZEIGEN
+        // Funktioniert zuverlässiger auf iOS/Safari als preload="auto".
 
         project.querySelectorAll('.video-thumbnail').forEach(function (video) {
 
-            video.addEventListener('loadedmetadata', function () {
+            function setPreviewFrame() {
 
-                video.currentTime = Math.min(
-                    2,
-                    Math.max(0, video.duration - 0.1)
-                );
+                if (!Number.isFinite(video.duration) || video.duration <= 0) {
+                    return;
+                }
 
-            }, { once: true });
+                const previewTime = Math.min(2, Math.max(0, video.duration - 0.1));
+
+                // Nur suchen, wenn der Browser noch nicht an dieser Stelle ist.
+                if (Math.abs(video.currentTime - previewTime) > 0.25) {
+                    video.currentTime = previewTime;
+                }
+
+            }
+
+            video.addEventListener('loadedmetadata', setPreviewFrame, { once: true });
 
             video.addEventListener('seeked', function () {
                 video.pause();
             });
+
+            video.addEventListener('error', function () {
+                console.warn('Video-Vorschau konnte nicht geladen werden:', video.currentSrc);
+            });
+
+            // Falls Metadaten beim Initialisieren bereits geladen sind.
+            if (video.readyState >= 1) {
+                setPreviewFrame();
+            }
 
         });
 
@@ -601,12 +679,25 @@ if (!empty($project_ids) && !empty($selected_category)) {
 
                 const videoUrl = this.dataset.video;
 
-                lightboxVideo.src = videoUrl;
+                // Lade-Rädchen sofort anzeigen, bis das Video abspielbereit ist.
+                showVideoLoader();
 
                 lightbox.classList.add('is-open');
                 lightbox.setAttribute('aria-hidden', 'false');
 
-                lightboxVideo.play();
+                lightboxVideo.src = videoUrl;
+                lightboxVideo.load();
+
+                const playPromise = lightboxVideo.play();
+
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(function (error) {
+                        // Bei blockierter automatischer Wiedergabe bleiben die Controls nutzbar.
+                        if (error.name !== 'AbortError') {
+                            hideVideoLoader();
+                        }
+                    });
+                }
 
             });
 
@@ -620,6 +711,7 @@ if (!empty($project_ids) && !empty($selected_category)) {
             lightboxVideo.pause();
             lightboxVideo.removeAttribute('src');
             lightboxVideo.load();
+            hideVideoLoader();
 
             lightbox.classList.remove('is-open');
             lightbox.setAttribute('aria-hidden', 'true');
