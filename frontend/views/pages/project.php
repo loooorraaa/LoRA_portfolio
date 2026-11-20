@@ -284,24 +284,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // EINZELNES VIDEO GROSS ÖFFNEN
+  // EINZELNES VIDEO GROSS ÖFFNEN
 
-    document.querySelectorAll('.video-preview').forEach(function (preview) {
+document.querySelectorAll('.video-preview').forEach(function (preview) {
 
-        preview.addEventListener('click', function () {
+    preview.addEventListener('click', function () {
 
-            const videoUrl = this.dataset.video;
+        const videoUrl = this.dataset.video;
 
-            lightboxVideo.src = videoUrl;
+        // Video direkt setzen
+        lightboxVideo.src = videoUrl;
 
-            lightbox.classList.add('is-open');
-            lightbox.setAttribute('aria-hidden', 'false');
+        // Lightbox öffnen
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
 
-            lightboxVideo.play();
+        // Video starten
+        const playPromise = lightboxVideo.play();
 
-        });
+        if (playPromise !== undefined) {
+            playPromise.catch(function (error) {
+                console.warn('Video-Wiedergabe:', error);
+            });
+        }
 
     });
+
+});
 
 
     // GROSSE VIDEOANSICHT SCHLIESSEN
